@@ -3,10 +3,20 @@ import { PostContext } from "../../Components/Provider/PostContext";
 
 export const Dashboard = () => {
   const { posts } = useContext(PostContext);
-  console.log(posts)
+
   return (
     <>
-      <h1>Dashboard</h1>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>
+            <h1>{post.title}</h1>
+            <h2>{post.description}</h2>
+            <h3>{post.owner}</h3>
+            <img src={post.image} alt={post.title} />
+           <p >{post.likes.length}</p>
+          </li>
+        ))}
+      </ul>
     </>
   );
 };

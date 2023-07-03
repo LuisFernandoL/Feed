@@ -33,6 +33,7 @@ export interface INew {
 }
 
 export interface IPosts {
+  image:string;
   title: string;
   description: string;
   owner: string;
@@ -45,4 +46,5 @@ export interface IPostContext {
   newPost: INew[];
   addNewPost: (formData: INew) => Promise<void>;
   posts: IPosts[];
+  setPosts: React.Dispatch<React.SetStateAction<IPosts[]>>;
 }
