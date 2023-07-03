@@ -4,43 +4,54 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useContext } from "react";
 import { UserContext } from "../../Components/Provider/User/UserContext";
 import { Input } from "../../Components/Input";
+import { LoginStyle } from "./style";
+import LoginImg from "../../assets/loginimg.svg";
 
 export const Login = () => {
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-	} = useForm<TLoginForm>({
-		resolver: zodResolver(loginFormSchema),
-	});
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<TLoginForm>({
+    resolver: zodResolver(loginFormSchema),
+  });
 
-	const { userLogin } = useContext(UserContext);
+  const { userLogin } = useContext(UserContext);
 
-	const submit: SubmitHandler<TLoginForm> = (formData) => {
-		userLogin(formData);
-	};
+  const submit: SubmitHandler<TLoginForm> = (formData) => {
+    userLogin(formData);
+  };
 
-	return (
-		<form onSubmit={handleSubmit(submit)}>
-			<h1>Acesse o KenzieFeed</h1>
-			<p>Preencha os campos corretamente para fazer login</p>
-
-			<Input
-				type="email"
-				placeholder="E-mail"
-				error={errors.email}
-				{...register("email")}
-			/>
-			<Input
-				type="password"
-				placeholder="Senha"
-				error={errors.password}
-				{...register("password")}
-			/>
-
-			<button type="submit">Entrar</button>
-			<p>Não é cadastrado?</p>
-			<button>Cadastre-se</button>
-		</form>
-	);
+  return (
+    <LoginStyle>
+      <div>
+        <img src={LoginImg} alt="Imagem mesa de excritório" />
+      </div>
+      <form onSubmit={handleSubmit(submit)}>
+        <div>
+          <h1>Acesse o KenzieFeed</h1>
+          <p>Preencha os campos corretamente para fazer login</p>
+        </div>
+        <div>
+          <Input
+            type="email"
+            placeholder="E-mail"
+            error={errors.email}
+            {...register("email")}
+          />
+          <Input
+            type="password"
+            placeholder="Senha"
+            error={errors.password}
+            {...register("password")}
+          />
+          <button type="submit">Entrar</button>
+        </div>
+        <div>
+          <p>Não é cadastrado?</p>
+          <button>Cadastre-se</button>
+        </div>
+      </form>
+    </LoginStyle>
+  );
 };
