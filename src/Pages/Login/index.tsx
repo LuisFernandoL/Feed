@@ -12,7 +12,7 @@ export const Login = () => {
 
     const { userLogin } = useContext(UserContext);
 
-    const submit:SubmitHandler<TLoginForm>  = (formData) => {
+    const submit:SubmitHandler<TLoginForm>=(formData) => {
         userLogin(formData);
     }
 
