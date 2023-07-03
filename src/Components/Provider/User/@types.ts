@@ -26,17 +26,23 @@ export interface IUserContext {
 }
 
 export interface INew {
-    newPost: IPosts
+  title: string;
+  description: string;
+  owner: string;
+  userId: number;
 }
 
 export interface IPosts {
   title: string;
   description: string;
   owner: string;
-  userId: string;
+  userId: number;
+  id: number;
+  likes: [];
 }
 
 export interface IPostContext {
   newPost: INew[];
   addNewPost: (formData: INew) => Promise<void>;
+  posts: IPosts[];
 }
