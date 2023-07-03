@@ -38,6 +38,7 @@ export interface IPosts {
   owner: string;
   userId: number;
   id: number;
+  image: string;
   likes: [];
 }
 

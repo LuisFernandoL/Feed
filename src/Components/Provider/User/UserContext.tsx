@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { api } from "../../../Services/api";
 import { IUserContext, IUserProviderProps, IUser, IUserRegisterResponse, IUserLoginResponse } from "./@types";
 import { useNavigate } from "react-router-dom"
@@ -11,29 +11,6 @@ export const UserContext = createContext({} as IUserContext);
 export const UserProvider = ({children}: IUserProviderProps) => {
     const [userLogged, setUserLogged] = useState<IUser | null>(null);
     const navigate = useNavigate()
-
-    useEffect(() => {
-        const loadUser = async () => {
-            const token = localStorage.getItem("@TOKEN")
-            
-            if(token){
-
-                try {
-             
-                    const response = await api.get("/users/id", {
-                        headers: {
-                        Authorization: `Bearer ${token}`,
-                        },
-                    });
-                    setUser(response.data)
-                    navigate("/dashboard")
-                } catch (error) {
-                    console.log(error)
-                }
-            }
-        }
-        loadUser()
-    }, [])
 
     const userRegister = async (formData: TRegisterForm) => {
         try {
@@ -48,7 +25,7 @@ export const UserProvider = ({children}: IUserProviderProps) => {
     }
     const userLogin = async (formData: TLoginForm) => {
         try {
-            const { data } = await api.post<IUserLoginResponse>("/sessions", formData);
+            const { data } = await api.post<IUserLoginResponse>("/login", formData);
             setUserLogged(data.user);
             localStorage.setItem("@TOKEN", data.accessToken);
             localStorage.setItem("@USERID", JSON.stringify(data.user.id));

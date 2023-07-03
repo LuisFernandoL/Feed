@@ -18,15 +18,9 @@ export const Login = () => {
 
   const { userLogin } = useContext(UserContext);
 
-<<<<<<< HEAD
     const submit:SubmitHandler<TLoginForm>=(formData) => {
         userLogin(formData);
     }
-=======
-  const submit: SubmitHandler<TLoginForm> = (formData) => {
-    userLogin(formData);
-  };
->>>>>>> 88ad2faacd0cb361b1157070a12a7ab980e7057a
 
   return (
     <LoginStyle>

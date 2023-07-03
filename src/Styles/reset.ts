@@ -8,9 +8,6 @@ const Reset = createGlobalStyle`
         outline: 0;
     }
 
-    html {
-        background-color: #121214;
-    }
 
     body, input, button, textarea {
         font-family: 'Inter', sans-serif;
