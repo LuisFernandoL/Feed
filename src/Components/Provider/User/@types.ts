@@ -19,7 +19,7 @@ export interface IUserLoginResponse{
     user: IUser;
 }
 export interface IUserContext{
-    user: IUser | null;
+    userLogged: IUser | null;
     userRegister: (formData: TRegisterForm) => Promise<void>;
     userLogin: (formData: TLoginForm) => Promise<void>;
     userLogout: () => void;
