@@ -9,7 +9,7 @@ import { TLoginForm } from "../../../Pages/Login/loginFormSchema";
 export const UserContext = createContext({} as IUserContext);
 
 export const UserProvider = ({children}: IUserProviderProps) => {
-    const [user, setUser] = useState<IUser | null>(null);
+    const [userLogged, setUserLogged] = useState<IUser | null>(null);
     const navigate = useNavigate()
 
     const userRegister = async (formData: TRegisterForm) => {
@@ -25,8 +25,8 @@ export const UserProvider = ({children}: IUserProviderProps) => {
     }
     const userLogin = async (formData: TLoginForm) => {
         try {
-            const { data } = await api.post<IUserLoginResponse>("/sessions", formData);
-            setUser(data.user);
+            const { data } = await api.post<IUserLoginResponse>("/login", formData);
+            setUserLogged(data.user);
             localStorage.setItem("@TOKEN", data.accessToken);
             localStorage.setItem("@USERID", JSON.stringify(data.user.id));
             toast.success('Login realizado com sucesso!');
@@ -38,14 +38,14 @@ export const UserProvider = ({children}: IUserProviderProps) => {
     }
 
     const userLogout = () => {
-        setUser(null);
+        setUserLogged(null);
         localStorage.removeItem("@TOKEN");
         localStorage.removeItem("@USERID");
         navigate("/")
     }
 
     return(
-        <UserContext.Provider value={{ user, userRegister, userLogin, userLogout }}>
+        <UserContext.Provider value={{ userLogged, userRegister, userLogin, userLogout }}>
             {children}
         </UserContext.Provider>
     )

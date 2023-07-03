@@ -25,32 +25,28 @@ export const Login = () => {
   return (
     <LoginStyle>
       <div>
-        <img src={LoginImg} alt="Imagem mesa de excritório" />
+        <img src={LoginImg} alt="" />
       </div>
       <form onSubmit={handleSubmit(submit)}>
-        <div>
-          <h1>Acesse o KenzieFeed</h1>
-          <p>Preencha os campos corretamente para fazer login</p>
-        </div>
-        <div>
-          <Input
-            type="email"
-            placeholder="E-mail"
-            error={errors.email}
-            {...register("email")}
-          />
-          <Input
-            type="password"
-            placeholder="Senha"
-            error={errors.password}
-            {...register("password")}
-          />
-          <button type="submit">Entrar</button>
-        </div>
-        <div>
-          <p>Não é cadastrado?</p>
-          <button>Cadastre-se</button>
-        </div>
+        <h1>Acesse o KenzieFeed</h1>
+        <p>Preencha os campos corretamente para fazer login</p>
+
+        <Input
+          type="email"
+          placeholder="E-mail"
+          error={errors.email}
+          {...register("email")}
+        />
+        <Input
+          type="password"
+          placeholder="Senha"
+          error={errors.password}
+          {...register("password")}
+        />
+
+        <button type="submit">Entrar</button>
+        <p>Não é cadastrado?</p>
+        <button>Cadastre-se</button>
       </form>
     </LoginStyle>
   );
