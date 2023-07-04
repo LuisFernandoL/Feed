@@ -14,7 +14,7 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
       try {
         const {data} = await api.get<IPosts[]>("/posts?_embed=likes");
         setPosts(data);
-        console.log(data);
+        console.log("oi");
       } catch (error) {
         console.log(error);
       }
