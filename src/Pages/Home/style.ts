@@ -27,6 +27,7 @@ export const StyledMain = styled.main`
 
   ul {
     margin-top: 4.2rem;
+    
   }
 
   .flex-between {
@@ -34,6 +35,7 @@ export const StyledMain = styled.main`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
   }
 `;
 

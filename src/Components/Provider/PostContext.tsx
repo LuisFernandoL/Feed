@@ -43,3 +43,4 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
     </PostContext.Provider>
   );
 };
+

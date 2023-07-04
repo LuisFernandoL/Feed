@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 58.7rem;
+  max-width: 939.2px;
 
   li {
     span {
