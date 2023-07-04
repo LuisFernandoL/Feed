@@ -26,7 +26,6 @@ export interface IUserContext {
 }
 
 export interface IPost {
-  image: string;
   title: string;
   description: string;
   owner: string;

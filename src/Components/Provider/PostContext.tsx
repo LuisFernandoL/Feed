@@ -37,7 +37,7 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
   const addNewPost = async (formData: IPostNew) => {
     try {
       const token = localStorage.getItem("@TOKEN");
-      const { data } = await api.post<IPost>("/posts", formData, {
+      const { data } = await api.post("/posts", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -84,6 +84,7 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
   const editiPage = (post: IPost) => {
     setEditing(post);
     navigate("/eddidpost");
+    console.log("oi Dev")
   };
 
   return (
