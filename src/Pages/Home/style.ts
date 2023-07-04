@@ -27,6 +27,12 @@ export const StyledMain = styled.main`
 
   ul {
     margin-top: 4.2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 4rem;
   }
 
   .flex-between {
