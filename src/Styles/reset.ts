@@ -9,7 +9,7 @@ const Reset = createGlobalStyle`
     }
 
     body, input, button, textarea {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Lora', serif;
     }
 
     button, select{
