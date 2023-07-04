@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, styled } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -10,6 +10,12 @@ const GlobalStyle = createGlobalStyle`
   font-size: 62.5%;
 
 }
+`
+
+export const Container = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  max-width: 122rem;
 `
 
 export default GlobalStyle
