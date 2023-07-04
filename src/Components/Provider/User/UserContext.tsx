@@ -46,12 +46,14 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
     }
   };
 
-  const userLogout = () => {
-    setUserLogged(null);
-    localStorage.removeItem("@TOKEN");
-    localStorage.removeItem("@USERID");
-    navigate("/");
-  };
+
+    const userLogout = () => {
+        setUserLogged(null);
+        localStorage.removeItem("@TOKEN");
+        localStorage.removeItem("@USERID");
+        setUserLogged(null)
+        navigate("/home")
+    }
 
   return (
     <UserContext.Provider

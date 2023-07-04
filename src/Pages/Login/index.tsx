@@ -7,6 +7,8 @@ import { Input } from "../../Components/Input";
 import LoginImg from "../../assets/loginimg.svg";
 import { StyledContainer } from "../../Styles/grid";
 
+import { Link } from 'react-router-dom'
+
 export const Login = () => {
   const {
     register,
@@ -18,42 +20,48 @@ export const Login = () => {
 
   const { userLogin } = useContext(UserContext);
 
-  const submit: SubmitHandler<TLoginForm> = (formData) => {
-    userLogin(formData);
-  };
+    const submit:SubmitHandler<TLoginForm>=(formData) => {
+        userLogin(formData);
+    }
 
   return (
-    <div>
+ 
+    <LoginStyle>
       <StyledContainer className="divInterna">
         <div className="div__img">
           <img src={LoginImg} alt="" />
         </div>
-        <div className="divForm">
           <form onSubmit={handleSubmit(submit)}>
-            <h1>Acesse o KenzieFeed</h1>
-            <p>Preencha os campos corretamente para fazer login</p>
-
-            <Input
-              type="email"
-              placeholder="E-mail"
-              error={errors.email}
-              {...register("email")}
-            />
-            <Input
-              type="password"
-              placeholder="Senha"
-              error={errors.password}
-              {...register("password")}
-            />
-
-            <span>
-              <button type="submit">Entrar</button>
-            </span>
-            <p>Não é cadastrado?</p>
-            <button>Cadastre-se</button>
+            <div>
+              <h1>Acesse o KenzieFeed</h1>
+              <p>Preencha os campos corretamente para fazer login</p>
+            </div>
+            <div>
+              <Input
+                type="email"
+                placeholder="E-mail"
+                error={errors.email}
+                {...register("email")}
+              />
+              <Input
+                type="password"
+                placeholder="Senha"
+                error={errors.password}
+                {...register("password")}
+              />
+              <span>
+                <button className="btn__enter" type="submit">
+                  Entrar
+                </button>
+              </span>
+            </div>
+            <div>
+              <p>Não é cadastrado?</p>
+      
+        <Link to='/users'>Cadastre-se</Link>
+            </div>
           </form>
-        </div>
       </StyledContainer>
-    </div>
+    </LoginStyle>
   );
 };

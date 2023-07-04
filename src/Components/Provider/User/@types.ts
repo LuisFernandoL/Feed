@@ -32,12 +32,14 @@ export interface IPost {
   owner: string;
   userId: number;
   id: number;
+  image: string;
   likes: [];
 }
 
 export type IPostNew = Omit<IPost, "id" | "likes">;
 
 export interface IPostContext {
+
   newPost: IPostNew | null;
   addNewPost: (formData: IPostNew) => Promise<void>;
   posts: IPost[];
@@ -49,3 +51,4 @@ export interface IPostContext {
   creatOpen: boolean;
   setCreatOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
+

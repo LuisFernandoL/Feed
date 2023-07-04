@@ -1,7 +1,9 @@
 import { useContext } from "react";
-import { PostContext } from "../../Components/Provider/PostContext";
 
+import Logout from "../../assets/Vector.png"
+import { UserContext } from "../../Components/Provider/User/UserContext";
 export const Dashboard = () => {
+
   const { posts, editiPage, deletePost } = useContext(PostContext);
 
   return (
