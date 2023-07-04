@@ -22,7 +22,7 @@ const Reset = createGlobalStyle`
         border: none;
     }
 
-    ul, ol{
+    ul, ol, li{
         display: flex;
         flex-direction: row;
         list-style: none;
