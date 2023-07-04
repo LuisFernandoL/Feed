@@ -14,7 +14,7 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
       try {
         const {data} = await api.get<IPosts[]>("/posts?_embed=likes");
         setPosts(data);
-        console.log(data);
+        console.log("oi");
       } catch (error) {
         console.log(error);
       }
@@ -37,8 +37,12 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
       toast.error("Ops! Algo deu errado ao fazer a nova postagem");
     }
   };
+
+
+
+
   return (
-    <PostContext.Provider value={{ newPost, addNewPost, posts }}>
+    <PostContext.Provider value={{ newPost, addNewPost, posts, editTech }}>
       {children}
     </PostContext.Provider>
   );

@@ -4,7 +4,14 @@ export const Container = styled.div`
   width: 100%;
   max-width: 939.2px;
 
+
   li {
+    img {
+      width: 100%;
+      max-width: 58.7rem;
+      height: auto;
+    }
+
     span {
       display: block;
       margin-top: 2.5rem;

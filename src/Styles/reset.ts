@@ -8,9 +8,8 @@ const Reset = createGlobalStyle`
         outline: 0;
     }
 
-
     body, input, button, textarea {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Lora', serif;
     }
 
     button, select{
@@ -23,7 +22,6 @@ const Reset = createGlobalStyle`
         display: flex;
         flex-direction: row;
         list-style: none;
-        gap: 20px;
     }
 
     a{
