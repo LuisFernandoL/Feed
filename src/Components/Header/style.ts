@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
 export const StyledHeader = styled.header`
+  position: 'sticky';
   width: 100%;
 
   div {

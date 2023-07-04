@@ -23,7 +23,6 @@ const Reset = createGlobalStyle`
         display: flex;
         flex-direction: row;
         list-style: none;
-        margin-left: 20px;
         gap: 20px;
     }
 
