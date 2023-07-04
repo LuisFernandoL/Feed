@@ -1,11 +1,15 @@
 import { useContext } from "react";
-import { PostContext } from "../../Components/Provider/PostContext";
 
+import Logout from "../../assets/Vector.png"
+import { UserContext } from "../../Components/Provider/User/UserContext";
 export const Dashboard = () => {
-  const { posts } = useContext(PostContext);
-  console.log(posts)
+
+  
+  const { userLogout } = useContext(UserContext);
+
   return (
     <>
+      <img onClick={() => userLogout()} src={Logout} alt="" />
       <h1>Dashboard</h1>
     </>
   );

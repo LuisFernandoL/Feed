@@ -7,6 +7,7 @@ import { Input } from "../../Components/Input";
 import { LoginStyle } from "./style";
 import LoginImg from "../../assets/loginimg.svg";
 import { StyledContainer } from "../../Styles/grid";
+import { Link } from 'react-router-dom'
 
 export const Login = () => {
   const {
@@ -19,11 +20,12 @@ export const Login = () => {
 
   const { userLogin } = useContext(UserContext);
 
-  const submit: SubmitHandler<TLoginForm> = (formData) => {
-    userLogin(formData);
-  };
+    const submit:SubmitHandler<TLoginForm>=(formData) => {
+        userLogin(formData);
+    }
 
   return (
+ 
     <LoginStyle>
       <StyledContainer className="divInterna">
         <div className="div__img">
@@ -55,7 +57,8 @@ export const Login = () => {
             </div>
             <div>
               <p>Não é cadastrado?</p>
-              <button>Cadastre-se</button>
+      
+        <Link to='/users'>Cadastre-se</Link>
             </div>
           </form>
       </StyledContainer>
