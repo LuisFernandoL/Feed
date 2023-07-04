@@ -4,9 +4,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useContext } from "react";
 import { UserContext } from "../../Components/Provider/User/UserContext";
 import { Input } from "../../Components/Input";
-import { LoginStyle } from "./style";
 import LoginImg from "../../assets/loginimg.svg";
 import { StyledContainer } from "../../Styles/grid";
+
 import { Link } from 'react-router-dom'
 
 export const Login = () => {

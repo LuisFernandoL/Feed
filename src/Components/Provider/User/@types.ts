@@ -25,14 +25,8 @@ export interface IUserContext {
   userLogout: () => void;
 }
 
-export interface INew {
-  title: string;
-  description: string;
-  owner: string;
-  userId: number;
-}
-
-export interface IPosts {
+export interface IPost {
+  image: string;
   title: string;
   description: string;
   owner: string;
@@ -42,8 +36,19 @@ export interface IPosts {
   likes: [];
 }
 
+export type IPostNew = Omit<IPost, "id" | "likes">;
+
 export interface IPostContext {
-  newPost: INew[];
-  addNewPost: (formData: INew) => Promise<void>;
-  posts: IPosts[];
+
+  newPost: IPostNew | null;
+  addNewPost: (formData: IPostNew) => Promise<void>;
+  posts: IPost[];
+  setPosts: React.Dispatch<React.SetStateAction<IPost[]>>;
+  eddidPost: (formData: IPostNew, postId: number) => Promise<void>;
+  editing: IPost;
+  deletePost: (postId: number) => Promise<void>;
+  editiPage: (post: IPost) => void;
+  creatOpen: boolean;
+  setCreatOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
