@@ -4,6 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useContext } from "react";
 import { UserContext } from "../../Components/Provider/User/UserContext";
 import { Input } from "../../Components/Input";
+import { Button } from "../../Styles/buttons";
+import { Link } from 'react-router-dom';
 
 export const Register = () => {
     const { register, handleSubmit, formState: { errors }} = useForm<TRegisterForm>({
@@ -20,6 +22,10 @@ export const Register = () => {
 
     return(
         <form onSubmit={handleSubmit(submit)}>
+              <Link  to='/'>
+              <Button variant='secondary' width='112px'>Voltar</Button>
+              </Link>
+          
             <h1>Cadastre um usuário</h1>
             <p>Preencha os campos corretamente para fazer login</p>
 

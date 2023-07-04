@@ -41,7 +41,8 @@ export const UserProvider = ({children}: IUserProviderProps) => {
         setUserLogged(null);
         localStorage.removeItem("@TOKEN");
         localStorage.removeItem("@USERID");
-        navigate("/")
+        setUserLogged(null)
+        navigate("/home")
     }
 
     return(

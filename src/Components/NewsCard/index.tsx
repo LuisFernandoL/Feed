@@ -3,6 +3,12 @@ import { Container } from "./style"
 import { TitleThree, TextTwo } from "../../Styles/typography"
 import { IPosts } from "../Provider/User/@types"
 
+// interface IPostCard{
+//   post: IPosts;
+// }
+
+// export const NewsCard = ({post}:IPostCard) => {
+  
 export const NewsCard = (post: IPosts) => {
   return (
     <Container>
@@ -17,4 +23,3 @@ export const NewsCard = (post: IPosts) => {
     </Container>
   )
 }
-

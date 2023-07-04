@@ -8,6 +8,7 @@ import { TitleOne, TitleTwo } from "../../Styles/typography";
 import { Button } from "../../Styles/buttons";
 import { NewsCard } from "../../Components/NewsCard";
 
+
 export const Home = () => {
 
   const { posts } = useContext(PostContext);
@@ -17,6 +18,7 @@ export const Home = () => {
     <Container>
       <StyledMain>
         <section>
+
           <img src={ KenzieFeed } alt="Imagem Kenzie/Feed" /> 
           <TitleOne>Seja muito bem vindo ao KenzieFeed</TitleOne>
           <p>Fique por dentro das últimas notícias</p>
@@ -25,12 +27,13 @@ export const Home = () => {
         <Container> 
           <div className="flex-between">
             <TitleTwo>últimas notícias</TitleTwo>
-            <Button variant="primary" width="122px">Acessar</Button>
+            <Button variant="primary" width="122px">Ver Tudo</Button>
           </div>
         </Container>
           <ul>
             {posts.map((post) => (
               <NewsCard key={post.id} {...post}/>
+              // <NewsCard key={post.id} post={post}/>
             ))}
           </ul>
       </StyledMain>

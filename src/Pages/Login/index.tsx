@@ -6,6 +6,7 @@ import { UserContext } from "../../Components/Provider/User/UserContext";
 import { Input } from "../../Components/Input";
 import { LoginStyle } from "./style";
 import LoginImg from "../../assets/loginimg.svg";
+import { Link } from 'react-router-dom'
 
 export const Login = () => {
   const {
@@ -23,6 +24,7 @@ export const Login = () => {
     }
 
   return (
+ 
     <LoginStyle>
       <div>
         <img src={LoginImg} alt="" />
@@ -46,7 +48,8 @@ export const Login = () => {
 
         <button type="submit">Entrar</button>
         <p>Não é cadastrado?</p>
-        <button>Cadastre-se</button>
+
+        <Link to='/users'>Cadastre-se</Link>
       </form>
     </LoginStyle>
   );
