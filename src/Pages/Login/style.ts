@@ -1,11 +1,11 @@
-
 import styled from "styled-components";
 
 export const LoginStyle = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   width: 100vw;
-  height: 100vh;
+  height:calc(100vh -8rem);
 
   .divInterna {
     display: flex;
@@ -51,10 +51,30 @@ export const LoginStyle = styled.div`
       }
 
       h1 {
+        text-align: center;
         font-weight: 700;
         font-size: 2.75rem;
+      }
+
+      p {
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .cad__link {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 4rem;
+      }
+
+      .link {
+        color: var(--color-color-primary);
+      }
+      .link:hover {
+        text-decoration: underline;
       }
     }
   }
 `;
-

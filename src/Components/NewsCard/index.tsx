@@ -20,7 +20,7 @@ export const NewsCard = ({post}:IPostCard) => {
         <TitleThree>{post.title}</TitleThree>
         <Link to={`/posts/${post.id}?_embed=likes`}>
          <TextTwo>
-          <p>Leia mais</p> 
+          <p>Leia mais</p>
           </TextTwo>
         </Link>
       </li>
