@@ -1,16 +1,11 @@
 import { useContext } from "react";
 import { PostContext } from "../../Components/Provider/PostContext";
-import { Header } from "../../Components/Header";
-import { Footer } from "../../Components/Footer";
-
 
 export const Dashboard = () => {
-
   const { posts, editiPage, deletePost } = useContext(PostContext);
 
   return (
     <>
-    <Header/>
       <main>
         <div>
           <h1>Suas publicações</h1>
@@ -34,7 +29,7 @@ export const Dashboard = () => {
           ))}
         </ul>
       </main>
-      <Footer/>
     </>
   );
 };
+
