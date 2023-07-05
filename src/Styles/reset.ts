@@ -10,6 +10,7 @@ const Reset = createGlobalStyle`
 
     body, input, button, textarea {
         font-family: 'Lora', serif;
+        font-size: 1.6rem;
     }
 
     button, select{
@@ -26,6 +27,7 @@ const Reset = createGlobalStyle`
 
     a{
         text-decoration: none;
+        color: unset;
     }
 
     input, textarea, select{

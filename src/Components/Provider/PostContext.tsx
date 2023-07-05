@@ -50,6 +50,7 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
     }
   };
 
+
   const eddidPost = async (formData: IPostNew, postId: number) => {
     try {
       const token = localStorage.getItem("@TOKEN");
@@ -88,21 +89,9 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
   };
 
   return (
-    <PostContext.Provider
-      value={{
-        newPost,
-        addNewPost,
-        posts,
-        setPosts,
-        eddidPost,
-        editing,
-        deletePost,
-        editiPage,
-        creatOpen,
-        setCreatOpen,
-      }}
-    >
+    <PostContext.Provider value={{ newPost, addNewPost, posts }}>
       {children}
     </PostContext.Provider>
   );
 };
+

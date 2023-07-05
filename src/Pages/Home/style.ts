@@ -14,6 +14,7 @@ export const StyledMain = styled.main`
     }
 
     p {
+      font-family: 'Inter', sans-serif;
       margin-top: 3.8rem;
       margin-bottom: 5.8rem;
     }
@@ -22,17 +23,19 @@ export const StyledMain = styled.main`
       width: 100%;
       height: auto;
     }
+
     margin-bottom: 10rem;
+
   }
 
   ul {
-    margin-top: 4.2rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
     gap: 4rem;
+    margin-top: 4.8rem;
+    margin-bottom: 10rem;
   }
 
   .flex-between {
@@ -40,6 +43,7 @@ export const StyledMain = styled.main`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
   }
 `;
 
