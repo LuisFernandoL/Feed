@@ -24,7 +24,7 @@ export const EdditPostPage = () => {
         <input type="text" {...register("title")} />
         <input type="text" {...register("image")} />
         <textarea {...register("description")}></textarea>
-        <button type="submit">Salvar post</button>
+        <button type="submit">Criar post</button>
       </form>
     </div>
   );

@@ -1,15 +1,20 @@
 import { useContext } from "react";
 import { PostContext } from "../../Components/Provider/PostContext";
+import { ModalNewPost } from "./ModalNewPost";
 
 export const Dashboard = () => {
-  const { posts, editiPage, deletePost } = useContext(PostContext);
+  const { posts, editiPage, deletePost, creatOpen, setCreatOpen } = useContext(PostContext);
+
+
+
 
   return (
     <>
       <main>
         <div>
           <h1>Suas publicações</h1>
-          <button>Novo post</button>
+          <button onClick={()=> setCreatOpen(true)}>Novo post</button>
+          {creatOpen ? <ModalNewPost/> : null}
         </div>
         <ul>
           {posts.map((post) => (

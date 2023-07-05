@@ -83,10 +83,24 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
   const editiPage = (post: IPost) => {
     setEditing(post);
     navigate("/eddidpost");
+    console.log("oi");
   };
 
   return (
-    <PostContext.Provider value={{ newPost, addNewPost, posts }}>
+    <PostContext.Provider
+      value={{
+        newPost,
+        addNewPost,
+        posts,
+        setPosts,
+        eddidPost,
+        editing,
+        deletePost,
+        editiPage,
+        creatOpen,
+        setCreatOpen,
+      }}
+    >
       {children}
     </PostContext.Provider>
   );
