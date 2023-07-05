@@ -21,8 +21,13 @@ export const EdditPostPage = () => {
   return (
     <div>
       <form onSubmit={handleSubmit(submit)}>
+        <button>Voltar</button>
+        <h1>Editando:</h1>
+        <label>Título</label>
         <input type="text" {...register("title")} />
+        <label>Imagem em destaque</label>
         <input type="text" {...register("image")} />
+        <label>Conteúdo</label>
         <textarea {...register("description")}></textarea>
         <button type="submit">Salvar post</button>
       </form>

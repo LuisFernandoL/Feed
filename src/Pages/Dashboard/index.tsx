@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { PostContext } from "../../Components/Provider/PostContext";
+import { StyledContainer } from "../../Styles/grid";
 
 export const Dashboard = () => {
   const { posts, editiPage, deletePost } = useContext(PostContext);
 
   return (
     <>
-      <main>
+      <StyledContainer>
         <div>
           <h1>Suas publicações</h1>
           <button>Novo post</button>
@@ -28,7 +29,7 @@ export const Dashboard = () => {
             </li>
           ))}
         </ul>
-      </main>
+      </StyledContainer>
     </>
   );
 };
