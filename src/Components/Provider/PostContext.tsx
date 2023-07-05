@@ -26,7 +26,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
       try {
         const { data } = await api.get<IPost[]>("/posts?_embed=likes");
         setPosts(data);
-
       } catch (error) {
         console.log(error);
       }
@@ -49,7 +48,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
       toast.error("Ops! Algo deu errado ao fazer a nova postagem");
     }
   };
-
 
   const eddidPost = async (formData: IPostNew, postId: number) => {
     try {
@@ -85,7 +83,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
   const editiPage = (post: IPost) => {
     setEditing(post);
     navigate("/eddidpost");
-    console.log("oi")
   };
 
   return (
@@ -94,4 +91,3 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
     </PostContext.Provider>
   );
 };
-
