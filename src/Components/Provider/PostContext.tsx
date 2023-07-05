@@ -84,7 +84,7 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
   const editiPage = (post: IPost) => {
     setEditing(post);
     navigate("/eddidpost");
-    console.log("oi Dev")
+    console.log("oi")
   };
 
   return (
