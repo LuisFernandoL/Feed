@@ -38,7 +38,6 @@ export interface IPost {
 export type IPostNew = Omit<IPost, "id" | "likes">;
 
 export interface IPostContext {
-
   newPost: IPostNew | null;
   addNewPost: (formData: IPostNew) => Promise<void>;
   posts: IPost[];

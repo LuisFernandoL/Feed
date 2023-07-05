@@ -6,7 +6,7 @@ import { ProtectedRoutes } from "../Components/ProtectedRoutes";
 import { Dashboard } from "../Pages/Dashboard";
 import { EdditPostPage } from "../Pages/Dashboard/EdditPost";
 import { Route, Routes } from "react-router-dom";
-// import { Post } from "../Pages/Post";
+import { Post } from "../Pages/Post";
 import { AllPosts } from "../Pages/AllPosts";
 
 export const RoutesMain = () => {

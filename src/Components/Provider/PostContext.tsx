@@ -26,7 +26,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
       try {
         const { data } = await api.get<IPost[]>("/posts?_embed=likes");
         setPosts(data);
-
       } catch (error) {
         console.log(error);
       }
@@ -84,7 +83,7 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
   const editiPage = (post: IPost) => {
     setEditing(post);
     navigate("/eddidpost");
-    console.log("oi")
+    console.log("oi");
   };
 
   return (
