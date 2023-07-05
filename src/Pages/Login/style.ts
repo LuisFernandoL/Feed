@@ -5,6 +5,7 @@ export const LoginStyle = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   width: 100vw;
+  gap: 2rem;
   height:calc(100vh -8rem);
 
   .divInterna {
@@ -15,7 +16,7 @@ export const LoginStyle = styled.div`
     align-items: center;
 
     .div__img {
-      min-width: clamp(150px, 100%, 580px);
+      width:clamp(150px, 100%, 580px);
       img {
         width: 100%;
         height: 100%;
@@ -28,9 +29,9 @@ export const LoginStyle = styled.div`
       justify-content: center;
       align-items: center;
       gap: 1.2rem;
-      width: 50%;
       height: 350px;
       padding: 0 1.6rem;
+      width: clamp(300px, 50vw, 1000px);
 
       .btn__enter {
         display: flex;

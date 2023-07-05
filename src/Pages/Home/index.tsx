@@ -40,7 +40,7 @@ export const Home = () => {
             ))}
           </ul>
         </StyledMain>
-        {/* <Footer/> */}
+        <Footer/>
       </Container>
     </>
   );
