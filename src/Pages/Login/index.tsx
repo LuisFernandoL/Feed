@@ -7,27 +7,33 @@ import { Input } from "../../Components/Input";
 import LoginImg from "../../assets/loginimg.svg";
 import { StyledContainer } from "../../Styles/grid";
 
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import { LoginStyle } from "./style";
+import { Header } from "../../Components/Header";
 
 export const Login = () => {
-  const {register, handleSubmit, formState: { errors }} = useForm<TLoginForm>({
-    resolver: zodResolver(loginFormSchema)
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<TLoginForm>({
+    resolver: zodResolver(loginFormSchema),
   });
 
   const { userLogin } = useContext(UserContext);
 
-    const submit:SubmitHandler<TLoginForm>=(formData) => {
-        userLogin(formData);
-    }
+  const submit: SubmitHandler<TLoginForm> = (formData) => {
+    userLogin(formData);
+  };
 
   return (
- 
-    <LoginStyle>
-      <StyledContainer className="divInterna">
-        <div className="div__img">
-          <img src={LoginImg} alt="" />
-        </div>
+    <>
+      <Header />
+      <LoginStyle>
+        <StyledContainer className="divInterna">
+          <div className="div__img">
+            <img src={LoginImg} alt="" />
+          </div>
           <form onSubmit={handleSubmit(submit)}>
             <div>
               <h1>Acesse o KenzieFeed</h1>
@@ -54,11 +60,12 @@ export const Login = () => {
             </div>
             <div>
               <p>Não é cadastrado?</p>
-      
-        <Link to='/users'>Cadastre-se</Link>
+
+              <Link to="/users">Cadastre-se</Link>
             </div>
           </form>
-      </StyledContainer>
-    </LoginStyle>
+        </StyledContainer>
+      </LoginStyle>
+    </>
   );
 };

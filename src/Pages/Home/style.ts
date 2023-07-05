@@ -14,6 +14,7 @@ export const StyledMain = styled.main`
     }
 
     p {
+      font-family: 'Inter', sans-serif;
       margin-top: 3.8rem;
       margin-bottom: 5.8rem;
     }
@@ -22,12 +23,16 @@ export const StyledMain = styled.main`
       width: 100%;
       height: auto;
     }
+
     margin-bottom: 10rem;
+
   }
 
   ul {
-    margin-top: 4.2rem;
-    
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4.8rem;
   }
 
   .flex-between {

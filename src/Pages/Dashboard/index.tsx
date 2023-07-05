@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { PostContext } from "../../Components/Provider/PostContext";
+import { Header } from "../../Components/Header";
 
 
 export const Dashboard = () => {
@@ -8,6 +9,7 @@ export const Dashboard = () => {
 
   return (
     <>
+    <Header/>
       <main>
         <div>
           <h1>Suas publicações</h1>

@@ -32,7 +32,6 @@ export interface IPost {
   owner: string;
   userId: number;
   id: number;
-  image: string;
   likes: [];
 }
 
