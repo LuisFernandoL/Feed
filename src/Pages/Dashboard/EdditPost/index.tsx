@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { PostContext } from "../../../Components/Provider/PostContext";
 import { useForm } from "react-hook-form";
-import { IPost, IPostNew } from "../../../Components/Provider/User/@types";
+import {  IPostNew } from "../../../Components/Provider/User/@types";
 
 export const EdditPostPage = () => {
   const { editing, eddidPost } = useContext(PostContext);

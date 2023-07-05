@@ -26,12 +26,12 @@ export interface IUserContext {
 }
 
 export interface IPost {
-  image: string;
   title: string;
   description: string;
   owner: string;
   userId: number;
   id: number;
+  image: string;
   likes: [];
 }
 
@@ -50,4 +50,3 @@ export interface IPostContext {
   creatOpen: boolean;
   setCreatOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
-
