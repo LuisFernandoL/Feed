@@ -10,6 +10,7 @@ import { StyledContainer } from "../../Styles/grid";
 import { Link } from "react-router-dom";
 import { LoginStyle } from "./style";
 import { Header } from "../../Components/Header";
+import { Footer } from "../../Components/Footer";
 
 export const Login = () => {
   const {
@@ -65,6 +66,7 @@ export const Login = () => {
             </div>
           </form>
         </StyledContainer>
+        <Footer/>
       </LoginStyle>
     </>
   );

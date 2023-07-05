@@ -7,6 +7,7 @@ import { Dashboard } from "../Pages/Dashboard";
 import { EdditPostPage } from "../Pages/Dashboard/EdditPost";
 import { Route, Routes } from "react-router-dom";
 import { Post } from "../Pages/Post";
+import { AllPosts } from "../Pages/AllPosts";
 
 export const RoutesMain = () => {
   return (
@@ -16,6 +17,7 @@ export const RoutesMain = () => {
         <Route path="/users" element={<Register />} />
         <Route path="/home" element={<Home />} />
         <Route path="/posts/:id" element={<Post/>}/>
+        <Route path="/posts" element={<AllPosts/>}/>
       </Route>
 
       <Route element={<ProtectedRoutes />}>

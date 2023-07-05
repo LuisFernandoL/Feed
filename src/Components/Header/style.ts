@@ -1,14 +1,22 @@
 import { styled } from "styled-components";
 
 export const StyledHeader = styled.header`
-  position: 'sticky';
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 8rem;
   width: 100%;
+  background-color: white;
 
   div {
-    margin: 2.4rem auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
     width: 100%;
     max-width: 122rem;
   }

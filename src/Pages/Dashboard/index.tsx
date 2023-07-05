@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { PostContext } from "../../Components/Provider/PostContext";
 import { Header } from "../../Components/Header";
+import { Footer } from "../../Components/Footer";
 
 
 export const Dashboard = () => {
@@ -33,6 +34,7 @@ export const Dashboard = () => {
           ))}
         </ul>
       </main>
+      <Footer/>
     </>
   );
 };

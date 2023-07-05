@@ -1,14 +1,13 @@
 import { styled } from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
-  max-width: 939.2px;
 
   li {
     flex-direction: column;
+    max-width: 54.7rem;
+
     img {
       width: 100%;
-      max-width: 54.7rem;
       height: auto;
     }
 
@@ -23,10 +22,8 @@ export const Container = styled.div`
       
     }
 
-    
-      p {
+    p {
       color: var(--color-color-primary);
-    
     }
   }
 `;

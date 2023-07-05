@@ -31,8 +31,11 @@ export const StyledMain = styled.main`
   ul {
     width: 100%;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 4rem;
     margin-top: 4.8rem;
+    margin-bottom: 10rem;
   }
 
   .flex-between {
