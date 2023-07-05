@@ -1,12 +1,6 @@
 import { createContext, useState } from "react";
 import { api } from "../../../Services/api";
-import {
-  IUserContext,
-  IUserProviderProps,
-  IUser,
-  IUserRegisterResponse,
-  IUserLoginResponse,
-} from "./@types";
+import { IUserContext, IUserProviderProps, IUser, IUserRegisterResponse, IUserLoginResponse } from "./@types";
 import { useNavigate } from "react-router-dom";
 import { TRegisterForm } from "../../../Pages/Register/registerFormSchema";
 import { toast } from "react-toastify";

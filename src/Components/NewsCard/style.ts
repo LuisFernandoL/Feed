@@ -5,6 +5,7 @@ export const Container = styled.div`
   li {
     flex-direction: column;
     max-width: 54.7rem;
+    min-width: clamp(150px, 100%, 580px);
 
     img {
       width: 100%;

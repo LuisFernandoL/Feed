@@ -1,11 +1,12 @@
-
 import styled from "styled-components";
 
 export const LoginStyle = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   width: 100vw;
-  height: 100vh;
+  gap: 2rem;
+  height:calc(100vh -8rem);
 
   .divInterna {
     display: flex;
@@ -15,7 +16,7 @@ export const LoginStyle = styled.div`
     align-items: center;
 
     .div__img {
-      min-width: clamp(150px, 100%, 580px);
+      width:clamp(150px, 100%, 580px);
       img {
         width: 100%;
         height: 100%;
@@ -28,9 +29,9 @@ export const LoginStyle = styled.div`
       justify-content: center;
       align-items: center;
       gap: 1.2rem;
-      width: 50%;
       height: 350px;
       padding: 0 1.6rem;
+      width: clamp(300px, 50vw, 1000px);
 
       .btn__enter {
         display: flex;
@@ -51,10 +52,30 @@ export const LoginStyle = styled.div`
       }
 
       h1 {
+        text-align: center;
         font-weight: 700;
         font-size: 2.75rem;
+      }
+
+      p {
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .cad__link {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 4rem;
+      }
+
+      .link {
+        color: var(--color-color-primary);
+      }
+      .link:hover {
+        text-decoration: underline;
       }
     }
   }
 `;
-

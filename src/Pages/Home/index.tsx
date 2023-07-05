@@ -27,7 +27,7 @@ export const Home = () => {
             <img src={LoginImg} alt="" />
           </section>
           <div className="flex-between">
-            <TitleTwo>últimas notícias</TitleTwo>
+            <TitleTwo>Últimas notícias</TitleTwo>
             <Link to={"/posts"}>
               <Button variant="primary" width="122px">
                 Ver Tudo

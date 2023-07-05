@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { PostContext } from "../../Components/Provider/PostContext";
 import { ModalNewPost } from "./ModalNewPost";
+import { StyledContainer } from "../../Styles/grid";
 
 export const Dashboard = () => {
   const { posts, editiPage, deletePost, creatOpen, setCreatOpen } = useContext(PostContext);
@@ -10,7 +11,7 @@ export const Dashboard = () => {
 
   return (
     <>
-      <main>
+      <StyledContainer>
         <div>
           <h1>Suas publicações</h1>
           <button onClick={()=> setCreatOpen(true)}>Novo post</button>
@@ -33,7 +34,7 @@ export const Dashboard = () => {
             </li>
           ))}
         </ul>
-      </main>
+      </StyledContainer>
     </>
   );
 };
