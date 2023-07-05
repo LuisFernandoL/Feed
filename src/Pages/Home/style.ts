@@ -31,7 +31,7 @@ export const StyledMain = styled.main`
   ul {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 4rem;
     margin-top: 4.8rem;
@@ -43,7 +43,7 @@ export const StyledMain = styled.main`
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    flex-wrap: wrap;
   }
 `;
 

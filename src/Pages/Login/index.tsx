@@ -58,10 +58,9 @@ export const Login = () => {
                 </button>
               </span>
             </div>
-            <div>
+            <div className="cad__link" >
               <p>Não é cadastrado?</p>
-
-              <Link to="/users">Cadastre-se</Link>
+              <Link className="link" to="/users">Cadastre-se</Link>
             </div>
           </form>
         </StyledContainer>

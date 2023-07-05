@@ -3,13 +3,13 @@ import { Container } from "./style"
 import { TitleThree, TextTwo } from "../../Styles/typography"
 import { IPost } from "../Provider/User/@types"
 
-// interface IPostCard{
-//   post: IPosts;
-// }
+interface IPostCard{
+  post: IPost;
+}
 
-// export const NewsCard = ({post}:IPostCard) => {
+export const NewsCard = ({post}:IPostCard) => {
   
-export const NewsCard = (post: IPost) => {
+
   return (
     <Container>
       <li>
@@ -20,7 +20,7 @@ export const NewsCard = (post: IPost) => {
         <TitleThree>{post.title}</TitleThree>
         <Link to={`/posts/${post.id}?_embed=likes`}>
          <TextTwo>
-          <p>Leia mais</p> 
+          <p>Leia mais</p>
           </TextTwo>
         </Link>
       </li>

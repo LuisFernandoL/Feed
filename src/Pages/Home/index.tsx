@@ -27,7 +27,7 @@ export const Home = () => {
             <img src={LoginImg} alt="" />
           </section>
           <div className="flex-between">
-            <TitleTwo>últimas notícias</TitleTwo>
+            <TitleTwo>Últimas notícias</TitleTwo>
             <Link to={"/posts"}>
               <Button variant="primary" width="122px">
                 Ver Tudo
@@ -36,12 +36,11 @@ export const Home = () => {
           </div>
           <ul>
             {posts.map((post) => (
-              <NewsCard key={post.id} {...post} />
-              // <NewsCard key={post.id} post={post}/>
+              <NewsCard key={post.id} post={post}/>
             ))}
           </ul>
         </StyledMain>
-        <Footer/>
+        {/* <Footer/> */}
       </Container>
     </>
   );
