@@ -51,6 +51,8 @@ export const LoginStyle = styled.div`
       }
 
       h1 {
+        min-width: clamp(150px, 100%, 430px);
+        text-align: center;
         font-weight: 700;
         font-size: 2.75rem;
       }
