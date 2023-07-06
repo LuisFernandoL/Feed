@@ -13,7 +13,6 @@ export const App = () => {
     <>
 			<GlobalStyle />
 			<Reset />
-      <Header/>
       <RoutesMain /> 
       <ToastContainer />
     </>

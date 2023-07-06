@@ -135,8 +135,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
     }
   };
 
-
- 
   return (
     <PostContext.Provider
       value={{
