@@ -6,14 +6,16 @@ export const LoginStyle = styled.div`
   flex-wrap: wrap;
   width: 100vw;
   gap: 2rem;
-  height:calc(100vh -8rem);
+  height: calc(100vh - 8rem);
 
   .divInterna {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    flex-direction: row;
     justify-content: center;
+    width: 100%;
     align-items: center;
+    gap: 12.6rem;
 
     .div__img {
       width:clamp(150px, 100%, 580px);
@@ -31,18 +33,24 @@ export const LoginStyle = styled.div`
       gap: 1.2rem;
       height: 350px;
       padding: 0 1.6rem;
-      width: clamp(300px, 50vw, 1000px);
+      max-width: 48rem;
+      /* width: clamp(300px, 50vw, 1000px); */
 
-      .btn__enter {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-width: clamp(150px, 92%, 370px);
-        height: 50px;
-        color: var(--color-grey-0);
-        background-color: var(--color-color-primary);
-        border-radius: 0.25rem;
-        margin: 1.6rem;
+      div:nth-child(1) {
+        text-align: center;
+        
+        h2 {
+          margin-bottom: 3.5rem;
+        }
+
+        p {
+          margin-bottom: 3.5rem;
+        }
+      }
+
+      div:nth-child(2) {
+        width: 100%;
+        max-width: 38rem;
       }
 
       span {
@@ -51,28 +59,18 @@ export const LoginStyle = styled.div`
         align-items: center;
       }
 
-      h1 {
-        text-align: center;
-        font-weight: 700;
-        font-size: 2.75rem;
-      }
-
-      p {
-        font-family: "Inter", sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-      }
-
       .cad__link {
         display: flex;
         flex-direction: column;
         text-align: center;
         gap: 4rem;
+        margin-top: 3.5rem;
       }
 
       .link {
         color: var(--color-color-primary);
       }
+      
       .link:hover {
         text-decoration: underline;
       }

@@ -18,11 +18,8 @@ export const AllPosts = () => {
           <TitleTwo>Todas as notícias</TitleTwo>
           <StyledUl>
             {posts.map((post) => (
-              // <NewsCard key={post.id} {...post} />
               <AllPostsCards key={post.id} post={post}/>
             ))}
-
-
           </StyledUl>
           </StyledDiv>
           <Footer/>

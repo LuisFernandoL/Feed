@@ -20,22 +20,21 @@ export const FormContainer = styled.section`
       margin-top: 4rem;
       margin-bottom: 3.5rem;
     }
-
-    input {
-      border: 1px solid rgba(0,0,0, 0.5);
-      padding: 1.8rem 2.4rem;
-      margin: 0.5rem 0;
-      width: 100%;
-      max-width: 37rem;
-    }
   }
 
 `
 
 export const FormGrid = styled.section`
-  display: grid;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
   width: 100%;
+
+  div {
+    width: 100%;
+    max-width: 36.9rem;
+  }
 `
 
 export const FormButton = styled(Button)`
