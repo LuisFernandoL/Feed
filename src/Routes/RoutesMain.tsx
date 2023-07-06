@@ -6,8 +6,8 @@ import { ProtectedRoutes } from "../Components/ProtectedRoutes";
 import { Dashboard } from "../Pages/Dashboard";
 import { EdditPostPage } from "../Pages/Dashboard/EdditPost";
 import { Route, Routes } from "react-router-dom";
-// import { Post } from "../Pages/Post";
 import { AllPosts } from "../Pages/AllPosts";
+import { InternalPage } from "../Components/InternalPage";
 
 export const RoutesMain = () => {
   return (
@@ -16,8 +16,9 @@ export const RoutesMain = () => {
         <Route path="/" element={<Login />} />
         <Route path="/users" element={<Register />} />
         <Route path="/home" element={<Home />} />
-        {/* <Route path="/posts/:id" element={<Post/>}/> */}
+        <Route path="/posts/:id" element={<InternalPage/>}/>
         <Route path="/posts" element={<AllPosts/>}/>
+        
       </Route>
 
       <Route element={<ProtectedRoutes />}>

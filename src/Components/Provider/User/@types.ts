@@ -35,6 +35,7 @@ export interface IPost {
   likes: [];
 }
 
+export type IPostPages = Omit<IPost, "image">;
 export type IPostNew = Omit<IPost, "id" | "likes">;
 
 export interface IPostContext {
@@ -48,4 +49,5 @@ export interface IPostContext {
   editiPage: (post: IPost) => void;
   creatOpen: boolean;
   setCreatOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  InternalPages: (id: number) => Promise<void>
 }

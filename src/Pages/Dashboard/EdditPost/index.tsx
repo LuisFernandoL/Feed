@@ -20,6 +20,7 @@ export const EdditPostPage = () => {
 
   return (
     <div>
+      
       <form onSubmit={handleSubmit(submit)}>
         <button>Voltar</button>
         <h1>Editando:</h1>

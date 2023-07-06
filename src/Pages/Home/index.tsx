@@ -34,10 +34,7 @@ export const Home = () => {
             </Link>
           </div>
           <ul>
-            {posts.map((post) => (
-              // <NewsCard key={post.id} {...post} />
-              <NewsCard key={post.id} post={post}/>
-            ))}
+            {posts.map(post => <NewsCard key={post.id} post={post}/>)}
           </ul>
         </StyledMain>
         <Footer/>
