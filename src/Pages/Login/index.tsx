@@ -30,7 +30,6 @@ export const Login = () => {
 
   return (
     <>
-      <Header />
       <LoginStyle>
         <StyledContainer className="divInterna">
           <div className="div__img">
@@ -39,7 +38,9 @@ export const Login = () => {
           <form onSubmit={handleSubmit(submit)}>
             <div>
               <TitleTwo>Acesse o KenzieFeed</TitleTwo>
-              <TextTwo>Preencha os campos corretamente para fazer login</TextTwo>
+              <TextTwo>
+                Preencha os campos corretamente para fazer login
+              </TextTwo>
             </div>
             <div>
               <Input
@@ -60,13 +61,15 @@ export const Login = () => {
                 </Button>
               </span>
             </div>
-            <div className="cad__link" >
+            <div className="cad__link">
               <p>Não é cadastrado?</p>
-              <Link className="link" to="/users">Cadastre-se</Link>
+              <Link className="link" to="/users">
+                Cadastre-se
+              </Link>
             </div>
           </form>
         </StyledContainer>
-        <Footer/>
+        <Footer />
       </LoginStyle>
     </>
   );

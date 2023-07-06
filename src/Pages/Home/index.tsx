@@ -14,11 +14,9 @@ import { Footer } from "../../Components/Footer";
 
 export const Home = () => {
   const { posts } = useContext(PostContext);
-  console.log(posts);
 
   return (
     <>
-      <Header />
       <Container>
         <StyledMain>
           <section>

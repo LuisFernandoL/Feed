@@ -16,9 +16,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
   const [posts, setPosts] = useState<IPost[]>([]);
   const [editing, setEditing] = useState<IPost>({} as IPost);
   const [creatOpen, setCreatOpen] = useState(false);
-
-  console.log(editing);
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -83,7 +80,7 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
     setEditing(post);
     navigate("/eddidpost");
   };
-  
+
   const InternalPages = async (id: number) => {
     try {
       const token = localStorage.getItem("@TOKEN");
@@ -92,8 +89,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
           Authorization: `Bearer ${token}`,
         },
       });
-
-      console.log("oi");
 
       navigate("/InternalPages");
       setPosts(data);

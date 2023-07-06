@@ -31,7 +31,6 @@ export const Register = () => {
 
   return (
     <>
-      <Header />
       <Container>
         <Link to="/">
           <BackButton variant="secondary" width="112px">
@@ -73,7 +72,9 @@ export const Register = () => {
               />
             </div>
           </FormGrid>
-          <FormButton variant='primary' type='submit' width="166px">Cadastrar-se</FormButton>
+          <FormButton variant="primary" type="submit" width="166px">
+            Cadastrar-se
+          </FormButton>
         </form>
       </FormContainer>
       <Footer />

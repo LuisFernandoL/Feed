@@ -50,4 +50,5 @@ export interface IPostContext {
   creatOpen: boolean;
   setCreatOpen: React.Dispatch<React.SetStateAction<boolean>>;
   InternalPages: (id: number) => Promise<void>;
+  // likePost: (formData: IPostNew) => Promise<void>;
 }
