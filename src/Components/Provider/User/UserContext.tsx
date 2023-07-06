@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { api } from "../../../Services/api";
 import { IUserContext, IUserProviderProps, IUser, IUserRegisterResponse, IUserLoginResponse } from "./@types";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +11,32 @@ export const UserContext = createContext({} as IUserContext);
 export const UserProvider = ({ children }: IUserProviderProps) => {
   const [userLogged, setUserLogged] = useState<IUser | null>(null);
   const navigate = useNavigate();
+
+
+//   useEffect(() => {
+//     const loadUser = async () => {
+//         const token = localStorage.getItem("@TOKEN")
+        
+//         if(token){
+
+//             try {
+//               const { data } = await api.post(`/users/${id}`, {
+//                     headers: {
+//                     Authorization: `Bearer ${token}`,
+//                     },
+//                 });
+        
+//                 setUserLogged(data.user)
+     
+//             } catch (error) {
+//                 console.log(error)
+                
+//             }
+//         }
+//     }
+//     loadUser()
+// }, [])
+
 
   const userRegister = async (formData: TRegisterForm) => {
     try {

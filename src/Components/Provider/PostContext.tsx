@@ -1,9 +1,10 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState} from "react";
 import {
   IPostNew,
   IPostContext,
   IPost,
   IUserProviderProps,
+
 } from "./User/@types";
 import { api } from "../../Services/api";
 import { toast } from "react-toastify";
@@ -83,9 +84,28 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
   const editiPage = (post: IPost) => {
     setEditing(post);
     navigate("/eddidpost");
-    console.log("oi");
+  };
+  const InternalPages = async (id:number) =>{
+    
+    try {
+      const token = localStorage.getItem("@TOKEN");
+      const { data } = await api.get<IPost[]>(`users/${id}?_embed=likes`,{
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+   
+      console.log("oi");
+
+      navigate("/InternalPages");
+      setPosts(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
+
+ 
   return (
     <PostContext.Provider
       value={{
@@ -99,6 +119,7 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
         editiPage,
         creatOpen,
         setCreatOpen,
+        InternalPages,
       }}
     >
       {children}
