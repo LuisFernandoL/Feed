@@ -3,13 +3,12 @@ import { styled } from "styled-components";
 export const TitleOne = styled.h1`
   font-family: Lora;
   font-weight: 700;
-  font-size:clamp(3.125rem, 10vw, 4.4rem);
+  font-size:clamp(3.125rem, 6vw, 5.3rem);
 `
 export const TitleTwo = styled.h2`
   font-family: Lora;
   font-weight: 700;
-  font-size:clamp(1.125rem, 10vw, 2.75rem);
-
+  font-size:clamp(2.125rem, 6vw, 4.4rem);
 `
 
 export const TitleThree = styled.strong`

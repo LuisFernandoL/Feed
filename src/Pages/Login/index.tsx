@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 import { LoginStyle } from "./style";
 import { Header } from "../../Components/Header";
 import { Footer } from "../../Components/Footer";
+import { TextTwo, TitleOne, TitleTwo } from "../../Styles/typography";
+import { Button } from "../../Styles/buttons";
 
 export const Login = () => {
   const {
@@ -36,8 +38,8 @@ export const Login = () => {
           </div>
           <form onSubmit={handleSubmit(submit)}>
             <div>
-              <h1>Acesse o KenzieFeed</h1>
-              <p>Preencha os campos corretamente para fazer login</p>
+              <TitleTwo>Acesse o KenzieFeed</TitleTwo>
+              <TextTwo>Preencha os campos corretamente para fazer login</TextTwo>
             </div>
             <div>
               <Input
@@ -53,9 +55,9 @@ export const Login = () => {
                 {...register("password")}
               />
               <span>
-                <button className="btn__enter" type="submit">
+                <Button variant="primary" type="submit">
                   Entrar
-                </button>
+                </Button>
               </span>
             </div>
             <div className="cad__link" >

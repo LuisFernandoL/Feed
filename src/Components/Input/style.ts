@@ -12,12 +12,13 @@ export const InputStyle = styled.div`
 
   input {
     display: flex;
-    /* min-width: clamp(150px, 100%, 370px); */
+    min-width: clamp(150px, 100%, 370px);
+    font-family: 'Inter', sans-serif;
     height: 50px;
     color: rgba(0, 0, 0, 0.5);
     border-radius: 0.25rem;
     border: 1px solid rgba(0, 0, 0, 0.50);
-    padding: 0 10px;
+    padding: 0 24px;
     margin-bottom: 12px;
     width: 100%;
   }
