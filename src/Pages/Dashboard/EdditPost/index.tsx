@@ -1,7 +1,11 @@
 import { useContext } from "react";
 import { PostContext } from "../../../Components/Provider/PostContext";
 import { useForm } from "react-hook-form";
-import {  IPostNew } from "../../../Components/Provider/User/@types";
+import { IPostNew } from "../../../Components/Provider/User/@types";
+import { StyledContainer } from "../../../Styles/grid";
+import { StyleEdditPostMain } from "./StyleEdditPost";
+import { Footer } from "../../../Components/Footer";
+import { AiOutlineArrowLeft } from "react-icons/ai"
 
 export const EdditPostPage = () => {
   const { editing, eddidPost } = useContext(PostContext);
@@ -19,19 +23,27 @@ export const EdditPostPage = () => {
   };
 
   return (
-    <div>
-      
-      <form onSubmit={handleSubmit(submit)}>
-        <button>Voltar</button>
-        <h1>Editando:</h1>
-        <label>Título</label>
-        <input type="text" {...register("title")} />
-        <label>Imagem em destaque</label>
-        <input type="text" {...register("image")} />
-        <label>Conteúdo</label>
-        <textarea {...register("description")}></textarea>
-        <button type="submit">Criar post</button>
-      </form>
-    </div>
+    <>
+      <StyleEdditPostMain>
+        <StyledContainer className="divMainEddit">
+          <span>
+            <h1>Editando:</h1>
+            <button><AiOutlineArrowLeft size={18}/>Voltar</button>
+          </span>
+          <form onSubmit={handleSubmit(submit)}>
+            <label>Título</label>
+            <input type="text" {...register("title")} />
+            <label>Imagem em destaque</label>
+            <input type="text" {...register("image")} />
+            <label>Conteúdo</label>
+            <textarea {...register("description")}></textarea>
+            <div className="divButtonEddit">
+              <button type="submit">Salvar post</button>
+            </div>
+          </form>
+        </StyledContainer>
+      </StyleEdditPostMain>
+      <Footer />
+    </>
   );
 };

@@ -20,28 +20,31 @@ export const ModalConteinerCreat = styled.div`
   div {
     display: flex;
     flex-direction: column;
-    height: 20vh;
     align-items: center;
     justify-content: flex-start;
-    background-color: #212529;
-    min-width: clamp(150px, 100%, 370px);
-    height: 34rem;
+    background-color: #FFFFFF;
+    min-width: clamp(150px, 100%, 800px);
     border-radius: 0.5rem;
+    padding: 2rem;
     header {
       display: flex;
       flex-direction: row;
       width: 100%;
       justify-content: space-between;
-      padding: 2rem;
-      background-color: #343b41;
-      font-size: 1.4rem;
+      padding: 2rem 0;
+      background-color: #FFFFFF;
+      font-size: 3.2rem;
       border-radius: 0.5rem 0.5rem 0 0;
-      color: #f8f9fa;
+      color: #000000;
       font-weight: 700;
 
+      h1{
+        font-weight: 700;
+      }
+
       button {
-        color: #f8f9fa;
-        font-size: 1.4rem;
+        color: var(--color-grey-2);
+        font-size: 2.2rem;
         font-weight: 700;
       }
     }

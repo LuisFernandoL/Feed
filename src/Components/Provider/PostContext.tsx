@@ -1,10 +1,9 @@
-import { createContext, useEffect, useState} from "react";
+import { createContext, useEffect, useState } from "react";
 import {
   IPostNew,
   IPostContext,
   IPost,
   IUserProviderProps,
-  ILikes,
 
 } from "./User/@types";
 import { api } from "../../Services/api";
@@ -45,7 +44,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log(data);
       setPosts([...posts, data]);
       toast.success("Nova postagem feita com sucesso");
     } catch (error) {
@@ -88,55 +86,26 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
     setEditing(post);
     navigate("/eddidpost");
   };
-  
-  
-  const internalPages = async (id:number) =>{
+  const InternalPages = async (id:number) =>{
     
     try {
- 
-      const { data } = await api.get<IPost>(`posts/${id}?_embed=likes`);
-      console.log(data);
-
-      setPostInternal(data);
-      navigate(`/posts/${id}`)
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const postLikes = async () => {
-    try {
       const token = localStorage.getItem("@TOKEN");
-      const { data } = await api.post("/likes", {
+      const { data } = await api.get<IPost[]>(`users/${id}?_embed=likes`,{
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log(data);
-      setLikes(data);
-  
-    } catch (error) {
-      toast.error("Ops! Algo deu errado.");
-    }
-  };
-  const postLikesDelete = async (id:number) => {
-    try {
-      const token = localStorage.getItem("@TOKEN");
-      const { data } = await api.delete(`/likes/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      console.log(data);
-      setLikes(data);
-  
+   
+      console.log("oi");
+
+      navigate("/InternalPages");
+      setPosts(data);
     } catch (error) {
       toast.error("Ops! Algo deu errado.");
     }
   };
 
 
- 
   return (
     <PostContext.Provider
       value={{
