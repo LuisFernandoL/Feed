@@ -3,7 +3,7 @@ import { PostContext } from "../../Components/Provider/PostContext";
 import { Container } from "../../Styles/global";
 import { TitleTwo } from "../../Styles/typography";
 import { Header } from "../../Components/Header";
-import { AllPostsCards } from "../../Components/AllPostsCards";
+import { AllPostsCards } from "./AllPostsCards";
 import { StyledUl, StyledDiv } from "./style";
 import { Footer } from "../../Components/Footer";
 

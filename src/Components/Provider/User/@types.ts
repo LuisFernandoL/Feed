@@ -23,6 +23,8 @@ export interface IUserContext {
   userRegister: (formData: TRegisterForm) => Promise<void>;
   userLogin: (formData: TLoginForm) => Promise<void>;
   userLogout: () => void;
+  access: () => void
+  // loadUser: (id: number) => Promise<void>
 }
 
 export interface IPost {
@@ -34,8 +36,10 @@ export interface IPost {
   image: string;
   likes: [];
 }
-
-export type IPostPages = Omit<IPost, "image">;
+export interface ILikes {
+  userId: number;
+  postId: number;
+  }
 export type IPostNew = Omit<IPost, "id" | "likes">;
 
 export interface IPostContext {
@@ -49,5 +53,9 @@ export interface IPostContext {
   editiPage: (post: IPost) => void;
   creatOpen: boolean;
   setCreatOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  InternalPages: (id: number) => Promise<void>
+  internalPages: (id: number) => Promise<void>
+  postLikes: (id: number) => Promise<void>
+  postLikesDelete: (id: number) => Promise<void>
+  postInternal: IPost
+  likes: ILikes[]
 }

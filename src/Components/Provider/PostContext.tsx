@@ -4,6 +4,7 @@ import {
   IPostContext,
   IPost,
   IUserProviderProps,
+  ILikes,
 
 } from "./User/@types";
 import { api } from "../../Services/api";
@@ -17,8 +18,9 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
   const [posts, setPosts] = useState<IPost[]>([]);
   const [editing, setEditing] = useState<IPost>({} as IPost);
   const [creatOpen, setCreatOpen] = useState(false);
+  const [likes, setLikes] = useState<ILikes[]>([])
+  const [postInternal, setPostInternal] = useState<IPost>({} as IPost)
 
-  console.log(editing);
 
   const navigate = useNavigate();
 
@@ -32,6 +34,7 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
       }
     };
     loadPost();
+  
   }, []);
 
   const addNewPost = async (formData: IPostNew) => {
@@ -85,22 +88,50 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
     setEditing(post);
     navigate("/eddidpost");
   };
-  const InternalPages = async (id:number) =>{
+  
+  
+  const internalPages = async (id:number) =>{
     
     try {
+ 
+      const { data } = await api.get<IPost>(`posts/${id}?_embed=likes`);
+      console.log(data);
+
+      setPostInternal(data);
+      navigate(`/posts/${id}`)
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const postLikes = async () => {
+    try {
       const token = localStorage.getItem("@TOKEN");
-      const { data } = await api.get<IPost[]>(`users/${id}?_embed=likes`,{
+      const { data } = await api.post("/likes", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-   
-      console.log("oi");
-
-      navigate("/InternalPages");
-      setPosts(data);
+      console.log(data);
+      setLikes(data);
+  
     } catch (error) {
-      console.log(error);
+      toast.error("Ops! Algo deu errado.");
+    }
+  };
+  const postLikesDelete = async (id:number) => {
+    try {
+      const token = localStorage.getItem("@TOKEN");
+      const { data } = await api.delete(`/likes/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log(data);
+      setLikes(data);
+  
+    } catch (error) {
+      toast.error("Ops! Algo deu errado.");
     }
   };
 
@@ -119,7 +150,11 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
         editiPage,
         creatOpen,
         setCreatOpen,
-        InternalPages,
+        internalPages,
+        postLikes,
+        postLikesDelete,
+        postInternal,
+        likes,
       }}
     >
       {children}
