@@ -49,5 +49,5 @@ export interface IPostContext {
   editiPage: (post: IPost) => void;
   creatOpen: boolean;
   setCreatOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  InternalPages: (id: number) => Promise<void>
+  InternalPages: (id: number) => Promise<void>;
 }

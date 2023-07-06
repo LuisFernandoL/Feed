@@ -18,7 +18,8 @@ export const StyledDiv = styled.div`
 
     span {
       svg {
-        fill: var(--color-color-primary)
+        fill: var(--color-color-primary);
+        margin-left:1rem;
       }
     }
 
