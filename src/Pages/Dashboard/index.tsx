@@ -4,18 +4,16 @@ import { ModalNewPost } from "./ModalNewPost";
 import { StyledContainer } from "../../Styles/grid";
 
 export const Dashboard = () => {
-  const { posts, editiPage, deletePost, creatOpen, setCreatOpen } = useContext(PostContext);
-
-
-
+  const { posts, editiPage, deletePost, creatOpen, setCreatOpen } =
+    useContext(PostContext);
 
   return (
     <>
       <StyledContainer>
         <div>
           <h1>Suas publicações</h1>
-          <button onClick={()=> setCreatOpen(true)}>Novo post</button>
-          {creatOpen ? <ModalNewPost/> : null}
+          <button onClick={() => setCreatOpen(true)}>Novo post</button>
+          {creatOpen ? <ModalNewPost /> : null}
         </div>
         <ul>
           {posts.map((post) => (
@@ -38,4 +36,3 @@ export const Dashboard = () => {
     </>
   );
 };
-

@@ -41,7 +41,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log(data);
       setPosts([...posts, data]);
       toast.success("Nova postagem feita com sucesso");
     } catch (error) {
