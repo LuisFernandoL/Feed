@@ -1,7 +1,8 @@
 import { useContext, useEffect, useRef } from "react";
-import { PostContext } from "../../../Components/Provider/PostContext";
+import { PostContext } from "../../../Provider/PostContext";
 import { ModalConteinerCreat } from "./StyleModalCreat";
 import { FormModalCreat } from "./FormModalCreat";
+import { AiOutlineClose } from "react-icons/ai"
 
 export const ModalNewPost = () => {
   const { setCreatOpen } = useContext(PostContext);
@@ -38,9 +39,9 @@ export const ModalNewPost = () => {
     <ModalConteinerCreat role="dialog">
       <div ref={modalRef}>
         <header>
-          <h1>novo post</h1>
+          <h1>Novo post</h1>
           <button ref={buttonRef} onClick={() => setCreatOpen(false)}>
-            X
+            <AiOutlineClose/>
           </button>
         </header>
        <FormModalCreat/>

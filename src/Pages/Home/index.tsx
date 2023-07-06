@@ -1,7 +1,7 @@
 import LoginImg from "../../assets/login-image.png";
 import KenzieFeed from "../../assets/kenzie-feed.png";
 import { useContext } from "react";
-import { PostContext } from "../../Components/Provider/PostContext";
+import { PostContext } from "../../Provider/PostContext";
 import { Container } from "../../Styles/global";
 import { StyledMain } from "./style";
 import { TitleOne, TitleTwo } from "../../Styles/typography";

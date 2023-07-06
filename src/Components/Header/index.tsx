@@ -4,7 +4,7 @@ import logo from "../../assets/logo.svg";
 import { Container } from "../../Styles/global";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { UserContext } from "../Provider/User/UserContext";
+import { UserContext } from "../../Provider/User/UserContext";
 
 export const Header = () => {
   const { access, userLogged  } = useContext(UserContext);

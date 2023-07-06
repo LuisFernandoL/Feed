@@ -7,7 +7,7 @@ import {
   ILikes,
 
 } from "./User/@types";
-import { api } from "../../Services/api";
+import { api } from "../Services/api";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 

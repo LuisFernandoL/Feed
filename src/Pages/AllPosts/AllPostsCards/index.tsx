@@ -1,8 +1,8 @@
 // import { Link } from "react-router-dom"
 import { useContext } from "react";
 import { TitleThree, TextTwo } from "../../../Styles/typography"
-import { IPost } from "../../../Components/Provider/User/@types"
-import { PostContext } from "../../../Components/Provider/PostContext";
+import { IPost } from "../../../Provider/User/@types"
+import { PostContext } from "../../../Provider/PostContext";
 
 interface IPostCards{
   post: IPost;

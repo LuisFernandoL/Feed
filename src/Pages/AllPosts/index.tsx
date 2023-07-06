@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { PostContext } from "../../Components/Provider/PostContext";
+import { PostContext } from "../../Provider/PostContext";
 import { Container } from "../../Styles/global";
 import { TitleTwo } from "../../Styles/typography";
 import { Header } from "../../Components/Header";

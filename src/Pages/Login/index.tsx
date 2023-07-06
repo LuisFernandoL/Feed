@@ -2,7 +2,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { loginFormSchema, TLoginForm } from "./loginFormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useContext } from "react";
-import { UserContext } from "../../Components/Provider/User/UserContext";
+import { UserContext } from "../../Provider/User/UserContext";
 import { Input } from "../../Components/Input";
 import LoginImg from "../../assets/loginimg.svg";
 import { StyledContainer } from "../../Styles/grid";

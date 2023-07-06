@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { PostContext } from "../../Components/Provider/PostContext";
+import { PostContext } from "../../Provider/PostContext";
 
 import { NewsCard } from "../Home/NewsCard";
 
