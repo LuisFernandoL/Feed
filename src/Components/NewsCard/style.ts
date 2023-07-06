@@ -13,18 +13,22 @@ export const Container = styled.div`
     }
 
     span {
-      display: block;
       margin-top: 2.5rem;
     }
 
     strong {
       margin-top: 1.4rem;
       margin-bottom: 5.6rem;
-      
     }
 
-    p {
+    strong + p {
       color: var(--color-color-primary);
     }
+  }
+
+  .read-more {
+
+      color: var(--color-color-primary);
+ 
   }
 `;

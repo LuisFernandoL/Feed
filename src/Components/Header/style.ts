@@ -18,6 +18,6 @@ export const StyledHeader = styled.header`
     align-items: center;
     
     width: 100%;
-    max-width: 122rem;
+    max-width: 120rem;
   }
 `

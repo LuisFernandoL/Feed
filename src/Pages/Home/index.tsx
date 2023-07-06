@@ -10,7 +10,6 @@ import { NewsCard } from "../../Components/NewsCard";
 import { Header } from "../../Components/Header";
 import { Link } from "react-router-dom";
 import { Footer } from "../../Components/Footer";
-import { AllPosts } from "../AllPosts";
 
 export const Home = () => {
   const { posts } = useContext(PostContext);
@@ -34,10 +33,7 @@ export const Home = () => {
             </Link>
           </div>
           <ul>
-            {posts.map((post) => (
-              // <NewsCard key={post.id} {...post} />
-              <NewsCard key={post.id} post={post}/>
-            ))}
+            {posts.map(post => <NewsCard key={post.id} post={post}/>)}
           </ul>
         </StyledMain>
         <Footer/>

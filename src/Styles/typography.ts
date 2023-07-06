@@ -21,6 +21,5 @@ export const TitleThree = styled.strong`
 export const TextTwo = styled.p`
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 0.875rem;
-  font-size:clamp(0.125rem, 10vw, 0.875rem);
+  font-size:clamp(1rem, 6vw, 1.7rem);
 `

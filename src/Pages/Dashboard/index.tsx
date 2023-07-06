@@ -6,9 +6,6 @@ import { StyledContainer } from "../../Styles/grid";
 export const Dashboard = () => {
   const { posts, editiPage, deletePost, creatOpen, setCreatOpen } = useContext(PostContext);
 
-
-
-
   return (
     <>
       <StyledContainer>
