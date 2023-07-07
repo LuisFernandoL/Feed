@@ -8,7 +8,7 @@ export const TitleOne = styled.h1`
 export const TitleTwo = styled.h2`
   font-family: Lora;
   font-weight: 700;
-  font-size:clamp(2.125rem, 6vw, 4.4rem);
+  font-size:clamp(2.125rem, 9vw, 4.4rem);
 `
 
 export const TitleThree = styled.strong`
@@ -20,5 +20,5 @@ export const TitleThree = styled.strong`
 export const TextTwo = styled.p`
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size:clamp(1rem, 6vw, 1.7rem);
+  font-size:clamp(1rem, 6vw, 1.5rem);
 `

@@ -10,6 +10,8 @@ export const StyledUl = styled.ul`
 `
 
 export const StyledDiv = styled.div`
+  height: calc(100vh - 16rem);
+
   h2 {
     margin-top: 4rem;
   }
