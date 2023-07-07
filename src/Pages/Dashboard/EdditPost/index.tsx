@@ -6,6 +6,7 @@ import { StyledContainer } from "../../../Styles/grid";
 import { StyleEdditPostMain } from "./StyleEdditPost";
 import { Footer } from "../../../Components/Footer";
 import { AiOutlineArrowLeft } from "react-icons/ai"
+import { Header } from "../../../Components/Header";
 
 export const EdditPostPage = () => {
   const { editing, eddidPost } = useContext(PostContext);
@@ -24,6 +25,7 @@ export const EdditPostPage = () => {
 
   return (
     <>
+    <Header/>
       <StyleEdditPostMain>
         <StyledContainer className="divMainEddit">
           <span>
@@ -43,7 +45,7 @@ export const EdditPostPage = () => {
           </form>
         </StyledContainer>
       </StyleEdditPostMain>
-      <Footer />
+      <Footer variant="fixed"/>
     </>
   );
 };

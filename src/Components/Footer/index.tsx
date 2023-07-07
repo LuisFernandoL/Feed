@@ -1,11 +1,13 @@
-import { Container } from "./styled"
+import { Container } from "./styled";
 
-export const Footer = () => {
-  return (
-    <Container>
-      <footer>
-        <p>Todos os direitos reservados - Kenzie Academy Brasil</p>
-      </footer>
-    </Container>
-  )
-}
+interface FooterProps {
+  variant?: "absolute"| "static"
+} 
+
+export const Footer = ({variant}: FooterProps) => (
+  <Container variant={variant}>
+    <footer>
+      <p>Todos os direitos reservados - Kenzie Academy Brasil</p>
+    </footer>
+  </Container>
+)

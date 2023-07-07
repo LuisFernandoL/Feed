@@ -6,11 +6,15 @@ interface ButtonProps {
 }
 
 export const Button = styled.button<ButtonProps>`
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1rem;
 
   ${(props) => {
     const { width } = props;
     return css`
-      padding: 1.2rem 0;
+      padding: 1.2rem 0.5rem;
       border: none;
       border-radius: 0.4rem;
       font-family: Inter, sans-serif;
