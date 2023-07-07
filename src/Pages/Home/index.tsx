@@ -17,6 +17,7 @@ export const Home = () => {
 
   return (
     <>
+    <Header/>
       <Container>
         <StyledMain>
           <section>

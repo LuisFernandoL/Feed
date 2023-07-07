@@ -7,7 +7,6 @@ import { NewsCard } from "../Home/NewsCard";
 export const InternalPage = () => {
   const {posts, postInternal, postLikes, postLikesDelete} = useContext(PostContext);
 
-  console.log(postInternal)
   return(
 <>
  

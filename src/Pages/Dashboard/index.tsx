@@ -6,12 +6,14 @@ import { DashboardNewCard } from "./DashboardNewCard";
 import { Footer } from "../../Components/Footer";
 import { StyledSection } from "./StyleSection";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { Header } from "../../Components/Header";
 
 export const Dashboard = () => {
   const { posts, creatOpen, setCreatOpen } = useContext(PostContext);
 
   return (
     <>
+    <Header/>
       <StyledContainer>
         <StyledSection>
           <div className="divOpenCreat">
@@ -23,7 +25,7 @@ export const Dashboard = () => {
           </div>
           <ul>
             {posts.map((post) => (
-              <DashboardNewCard post={post} />
+              <DashboardNewCard key={post.id} post={post} />
             ))}
           </ul>
         </StyledSection>

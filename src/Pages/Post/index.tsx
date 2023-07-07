@@ -3,8 +3,8 @@ import { Header } from "../../Components/Header";
 import { api } from "../../Services/api";
 import { useEffect, useState } from "react";
 import { TextTwo, TitleTwo } from "../../Styles/typography";
-import { IPost } from "../../Components/Provider/User/@types";
 import { Footer } from "../../Components/Footer";
+import { IPost } from "../../Provider/User/@types";
 
 export const Post = () => {
   const [post, setPost] = useState({} as IPost);
@@ -12,7 +12,7 @@ export const Post = () => {
 
   //nao consegui chamar o post pelo id dinamicamente como na documentacao, me parece que essa rota nao esta funcionando como deveria.
   //fiz aqui no componente, porem seria melhor levar essa funcao para o contexto assim que conseguirmos usar a rota.
-  //Se quizerem mexer, nao tem problema. 
+  //Se quizerem mexer, nao tem problema.
 
   useEffect(() => {
     try {
@@ -33,7 +33,11 @@ export const Post = () => {
         <TextTwo>{post.owner}</TextTwo>
         <TitleTwo>{post.title}</TitleTwo>
         <img src={post.image} alt="" />
-        <span>{post.likes.length > 0 ? "S2 seja o primeiro a curtir esse post" : post.likes +" curtida"}</span>
+        <span>
+          {post.likes.length > 0
+            ? "S2 seja o primeiro a curtir esse post"
+            : post.likes + " curtida"}
+        </span>
         <article>
           <p>{post.description}</p>
         </article>

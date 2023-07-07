@@ -45,6 +45,7 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
       console.log(data);
       setPosts([...posts, data]);
       toast.success("Nova postagem feita com sucesso");
+      setCreatOpen(false);
     } catch (error) {
       toast.error("Ops! Algo deu errado ao fazer a nova postagem");
     }

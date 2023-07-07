@@ -8,9 +8,8 @@ import LoginImg from "../../assets/loginimg.svg";
 import { StyledContainer } from "../../Styles/grid";
 import { Link } from "react-router-dom";
 import { LoginStyle } from "./style";
-import { Header } from "../../Components/Header";
 import { Footer } from "../../Components/Footer";
-import { TextTwo, TitleOne, TitleTwo } from "../../Styles/typography";
+import { TextTwo, TitleTwo } from "../../Styles/typography";
 import { Button } from "../../Styles/buttons";
 
 export const Login = () => {

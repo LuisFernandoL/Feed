@@ -9,7 +9,6 @@ import { UserContext } from "../../Provider/User/UserContext";
 export const Header = () => {
   const { access, userLogged  } = useContext(UserContext);
   const token = localStorage.getItem("@TOKEN")
-  console.log(userLogged)
   return (
     <StyledHeader>
       <Container>
