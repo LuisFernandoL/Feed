@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { PostContext } from "../../Provider/PostContext";
 import { ModalNewPost } from "./ModalNewPost";
 import { StyledContainer } from "../../Styles/grid";
-import { DashboardNewCard } from "./DashboardNewCard";
 import { Footer } from "../../Components/Footer";
 import { StyledSection } from "./StyleSection";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { DashboardNewCard } from "./DashboardNewCard";
 
 export const Dashboard = () => {
   const { posts, creatOpen, setCreatOpen } = useContext(PostContext);
