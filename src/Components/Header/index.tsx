@@ -5,24 +5,35 @@ import { Container } from "../../Styles/global";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../Provider/User/UserContext";
+import { FiLogOut } from "react-icons/fi";
+interface HeaderProps {
+  pathname?: string | undefined;
+}
 
-export const Header = () => {
-  const { access, userLogged  } = useContext(UserContext);
-  const token = localStorage.getItem("@TOKEN")
-  console.log(userLogged)
+export const Header = ({ pathname }: HeaderProps) => {
+  const { access, userLogged } = useContext(UserContext);
+  const isDash: boolean = pathname === "/dashboard";
+  // const token = localStorage.getItem("@TOKEN")
+  console.log(userLogged);
   return (
     <StyledHeader>
       <Container>
         <Link to="/home">
           <img src={logo} />
         </Link>
-       
+
         {/* {!token && <Link to="/"> */}
 
-         <Button onClick={access} variant="primary" width="112px">
-
-            Acessar
-        </Button>
+        <span>
+          <Button
+            onClick={access}
+            variant={isDash ? "secondary" : "primary"}
+            width="112px"
+          >
+            {!isDash ? "Acessar" : "Dashboard"}
+          </Button>
+          {isDash && <FiLogOut size={24} />}
+        </span>
         {/* </Link>} */}
       </Container>
     </StyledHeader>

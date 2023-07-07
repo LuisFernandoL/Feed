@@ -19,5 +19,11 @@ export const StyledHeader = styled.header`
     
     width: 100%;
     max-width: 120rem;
+
+    span {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
   }
 `

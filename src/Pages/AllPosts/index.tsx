@@ -7,6 +7,7 @@ import { AllPostsCards } from "./AllPostsCards";
 import { StyledUl, StyledDiv } from "./style";
 import { Footer } from "../../Components/Footer";
 
+
 export const AllPosts = () => {
   const { posts } = useContext(PostContext);
 
@@ -18,11 +19,11 @@ export const AllPosts = () => {
           <TitleTwo>Todas as notícias</TitleTwo>
           <StyledUl>
             {posts.map((post) => (
-              <AllPostsCards key={post.id} post={post}/>
+              <AllPostsCards key={post.id} post={post} />
             ))}
           </StyledUl>
-          </StyledDiv>
-          <Footer/>
+        </StyledDiv>
+        <Footer variant="fixed"/>
       </Container>
     </>
   );

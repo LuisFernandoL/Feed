@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { TitleThree, TextTwo } from "../../../Styles/typography"
 import { IPost } from "../../../Provider/User/@types"
 import { PostContext } from "../../../Provider/PostContext";
+import { StyledAllPosts } from "./style";
 
 interface IPostCards{
   post: IPost;
@@ -16,7 +17,7 @@ export const AllPostsCards = ({post}:IPostCards) => {
     await internalPages(id)
   }
   return (
-    <div>
+    <StyledAllPosts>
       <li>
         <img src={post.image} alt={post.title} />
         <span>
@@ -29,6 +30,6 @@ export const AllPostsCards = ({post}:IPostCards) => {
           </TextTwo>
         {/* </Link> */}
       </li>
-    </div>
+    </StyledAllPosts>
   )
 }
