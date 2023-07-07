@@ -28,7 +28,7 @@ export const Dashboard = () => {
             </div>
             <ul>
               {posts.map((post) => (
-                <DashboardNewCard post={post} />
+                <DashboardNewCard key={post.id}post={post} />
               ))}
             </ul>
           </StyledSection>

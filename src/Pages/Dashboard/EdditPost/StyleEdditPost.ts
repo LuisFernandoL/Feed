@@ -70,6 +70,7 @@ export const StyleEdditPostMain = styled.main`
       .divButtonEddit {
         display: flex;
         width: 100%;
+        
         button {
           width: 16.6rem;
           height: 6.4rem;
@@ -80,6 +81,7 @@ export const StyleEdditPostMain = styled.main`
           font-weight: 700;
           font-family: 'inter', sans-serif;
         }
+        
       }
     }
   }

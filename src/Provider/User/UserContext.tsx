@@ -26,9 +26,9 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
                     },
                 });
         
-                setUserLogged(data.user)
-                console.log(data.user)
-                navigate("/home")
+                setUserLogged(data)
+                console.log(data)
+                navigate("/dashboard")
             } catch (error) {
                 console.log(error)
                 

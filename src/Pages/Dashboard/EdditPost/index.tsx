@@ -7,6 +7,7 @@ import { StyleEdditPostMain } from "./StyleEdditPost";
 import { Footer } from "../../../Components/Footer";
 import { AiOutlineArrowLeft } from "react-icons/ai"
 import { Header } from "../../../Components/Header";
+import { Link } from "react-router-dom";
 
 export const EdditPostPage = () => {
   const { editing, eddidPost } = useContext(PostContext);
@@ -30,7 +31,9 @@ export const EdditPostPage = () => {
         <StyledContainer className="divMainEddit">
           <span>
             <h1>Editando:</h1>
-            <button><AiOutlineArrowLeft size={18}/>Voltar</button>
+            <Link to="/dashboard">
+            <button><AiOutlineArrowLeft size={18} />Voltar</button>
+            </Link>
           </span>
           <form onSubmit={handleSubmit(submit)}>
             <label>Título</label>

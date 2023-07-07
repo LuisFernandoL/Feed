@@ -30,4 +30,5 @@ export const Container = styled.div<ContainerProps>`
     width: 100%;
     height: 12rem;
   }
+
 `;

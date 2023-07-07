@@ -9,7 +9,7 @@ import { Container } from "../../Styles/global";
 import { Footer } from "../../Components/Footer";
 
 export const InternalPage = () => {
-  const { posts, postInternal, postLikes, postLikesDelete } =
+  const { posts, postInternal } =
     useContext(PostContext);
 
   console.log(postInternal);
