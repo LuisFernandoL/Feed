@@ -37,6 +37,8 @@ export const StyledMain = styled.main`
     margin-bottom: 10rem;
   }
 
+  
+
   .flex-between {
     width: 100%;
     display: flex;

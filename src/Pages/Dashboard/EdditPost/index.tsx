@@ -68,7 +68,7 @@ export const EdditPostPage = () => {
           </form>
         </StyledContainer>
       </StyleEdditPostMain>
-      <Footer />
+      <Footer variant="fixed"/>
     </>
   );
 };

@@ -16,20 +16,17 @@ export const RoutesMain = () => {
       <Route element={<PublicRoutes />}>
         <Route path="/" element={<Login />} />
         <Route path="/users" element={<Register />} />
-     
-    </Route>
+      </Route>
 
-        <Route path="/home" element={<Home />} />
-        
-        <Route path="/posts" element={<AllPosts/>}/>
+      <Route path="/home" element={<Home />} />
+      <Route path="/posts" element={<AllPosts />} />
+      
       <Route element={<ProtectedRoutes />}>
-       
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/eddidpost" element={<EdditPostPage />} />
-        <Route path="/posts/:id" element={<InternalPage/>}/>
+        <Route path="/posts/:id" element={<InternalPage />} />
       </Route>
     </Routes>
-
-   
   );
 };
+

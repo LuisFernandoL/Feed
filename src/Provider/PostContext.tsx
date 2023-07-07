@@ -1,10 +1,11 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState} from "react";
 import {
   IPostNew,
   IPostContext,
   IPost,
   IUserProviderProps,
   ILikes,
+
 } from "./User/@types";
 import { api } from "../Services/api";
 import { toast } from "react-toastify";
@@ -13,12 +14,13 @@ import { useNavigate } from "react-router-dom";
 export const PostContext = createContext({} as IPostContext);
 
 export const NewProvider = ({ children }: IUserProviderProps) => {
-  const [newPost, setNewPost] = useState<IPostNew | null>(null);
+  const [newPost] = useState<IPostNew | null>(null);
   const [posts, setPosts] = useState<IPost[]>([]);
   const [editing, setEditing] = useState<IPost>({} as IPost);
   const [creatOpen, setCreatOpen] = useState(false);
-  const [likes, setLikes] = useState<ILikes[]>([]);
-  const [postInternal, setPostInternal] = useState<IPost>({} as IPost);
+  const [likes, setLikes] = useState<ILikes[]>([])
+  const [postInternal, setPostInternal] = useState<IPost>({} as IPost)
+
 
   const navigate = useNavigate();
 
@@ -32,6 +34,7 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
       }
     };
     loadPost();
+  
   }, []);
 
   const addNewPost = async (formData: IPostNew) => {
@@ -45,7 +48,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
       console.log(data);
       setPosts([...posts, data]);
       toast.success("Nova postagem feita com sucesso");
-      setCreatOpen(false);
     } catch (error) {
       toast.error("Ops! Algo deu errado ao fazer a nova postagem");
     }
@@ -86,14 +88,17 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
     setEditing(post);
     navigate("/eddidpost");
   };
-
-  const internalPages = async (id: number) => {
+  
+  
+  const internalPages = async (id:number) =>{
+    
     try {
+ 
       const { data } = await api.get<IPost>(`posts/${id}?_embed=likes`);
       console.log(data);
 
       setPostInternal(data);
-      navigate(`/posts/${id}`);
+      navigate(`/posts/${id}`)
     } catch (error) {
       console.log(error);
     }
@@ -109,11 +114,12 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
       });
       console.log(data);
       setLikes(data);
+  
     } catch (error) {
       toast.error("Ops! Algo deu errado.");
     }
   };
-  const postLikesDelete = async (id: number) => {
+  const postLikesDelete = async (id:number) => {
     try {
       const token = localStorage.getItem("@TOKEN");
       const { data } = await api.delete(`/likes/${id}`, {
@@ -123,6 +129,7 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
       });
       console.log(data);
       setLikes(data);
+  
     } catch (error) {
       toast.error("Ops! Algo deu errado.");
     }

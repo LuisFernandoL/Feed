@@ -1,10 +1,25 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 
-export const Container = styled.div`
-  bottom: 0;
+type ContainerProps = {
+  variant?: string;
+};
+
+export const Container = styled.div<ContainerProps>`
+  ${({ variant }: ContainerProps) => {
+    if (variant === "fixed") {
+      return css`
+        position: fixed;
+        bottom: 0;
+        left: 0;
+      `;
+    } else if (variant === "static") {
+      return css`
+        position: static;
+      `;
+    }
+  }};
+
   width: 100%;
-  bottom: 0;
-  left: 0;
   background-color: white;
 
   footer {
@@ -15,4 +30,4 @@ export const Container = styled.div`
     width: 100%;
     height: 8rem;
   }
-`
+`;

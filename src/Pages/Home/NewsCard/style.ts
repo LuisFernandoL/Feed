@@ -2,16 +2,18 @@ import { styled } from "styled-components";
 
 export const Container = styled.div`
 
+
   li {
     flex-direction: column;
-    max-width: 54.7rem;
-    min-width: clamp(150px, 100%, 580px);
-    align-items: flex-start;
+    width: 54.6rem;
+    max-width: clamp(15rem, 100%, 58rem);
+
+    
 
     img {
-      width: 100%;
-      height: auto;
-      border-radius: 25px;
+      border-radius: 2.5rem;
+      max-height: 25.4rem;
+      max-width: clamp(150px, 100%, 580px);
     }
 
     span {
@@ -20,16 +22,18 @@ export const Container = styled.div`
 
     strong {
       margin-top: 1.4rem;
-      margin-bottom: 5.6rem;
+      margin-bottom: 3.6rem;
     }
 
     strong + p {
       color: var(--color-color-primary);
     }
+    padding-bottom: 2rem;
   }
 
   .read-more {
+
       color: var(--color-color-primary);
-      padding-top: 2rem;
+ 
   }
 `;

@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const Reset = createGlobalStyle`
-    *{
+    * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -13,19 +13,19 @@ const Reset = createGlobalStyle`
         font-size: 1.6rem;
     }
 
-    button, select{
+    button, select {
         cursor: pointer;
         background: transparent;
         border: none;
     }
 
-    ul, ol, li{
+    ul, ol, li {
         display: flex;
         flex-direction: row;
         list-style: none;
     }
 
-    a{
+    a {
         text-decoration: none;
         color: unset;
     }

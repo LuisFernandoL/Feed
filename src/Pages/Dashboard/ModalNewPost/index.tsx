@@ -1,13 +1,15 @@
 import { useContext, useEffect, useRef } from "react";
 import { PostContext } from "../../../Provider/PostContext";
-import { ModalConteinerCreat } from "./StyleModalCreat";
+import { ModalContainerCreate } from "./StyleModalCreat";
 import { FormModalCreat } from "./FormModalCreat";
-import { AiOutlineClose } from "react-icons/ai"
+import { AiOutlineClose } from "react-icons/ai";
+import { TitleTwo } from "../../../Styles/typography";
 
 export const ModalNewPost = () => {
   const { setCreatOpen } = useContext(PostContext);
   const buttonRef = useRef(null as any);
   const modalRef = useRef(null as any);
+  console.log(modalRef);
 
   useEffect(() => {
     const handleOutclick = (e: { target: any }) => {
@@ -35,16 +37,16 @@ export const ModalNewPost = () => {
   });
 
   return (
-    <ModalConteinerCreat role="dialog">
+    <ModalContainerCreate role="dialog">
       <div ref={modalRef}>
         <header>
-          <h1>Novo post</h1>
-          <button className="closeBtn" ref={buttonRef} onClick={() => setCreatOpen(false)}>
-            <AiOutlineClose fill="black" size={25}/>
+          <TitleTwo>Novo post</TitleTwo>
+          <button ref={buttonRef} onClick={() => setCreatOpen(false)}>
+            <AiOutlineClose size={21} color={"#0000007f"}/>
           </button>
         </header>
-       <FormModalCreat/>
+        <FormModalCreat />
       </div>
-    </ModalConteinerCreat>
+    </ModalContainerCreate>
   );
 };

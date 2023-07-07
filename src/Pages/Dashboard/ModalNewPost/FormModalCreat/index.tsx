@@ -2,11 +2,11 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { IPostNew } from "../../../../Provider/User/@types";
 import { useContext } from "react";
 import { PostContext } from "../../../../Provider/PostContext";
-import { StyleModalCreat } from "./StyleModalCreat";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SchemaFormModal } from "./SchemaFormModal";
 import { InputEdit } from "../../EdditPost/InputEdit/InputEdit";
 import { TextAreaEdit } from "../../EdditPost/InputEdit/TextAreaEdit/TextAreaEdit";
+import { StyleModalCreate } from "./StyleModalCreat";
 
 export const FormModalCreat = () => {
   const { addNewPost } = useContext(PostContext);
@@ -20,8 +20,9 @@ export const FormModalCreat = () => {
   const submit: SubmitHandler<IPostNew> = (formData) => {
     addNewPost(formData);
   };
+
   return (
-    <StyleModalCreat onSubmit={handleSubmit(submit)}>
+    <StyleModalCreate onSubmit={handleSubmit(submit)}>
       <InputEdit
         placeholder="Título"
         error={errors.title?.message}
@@ -40,8 +41,8 @@ export const FormModalCreat = () => {
         {...register("description")}
       ></TextAreaEdit>
       <span>
-        <button type="submit">Salvar post</button>
+        <button type="submit">Criar post</button>
       </span>
-    </StyleModalCreat>
+    </StyleModalCreate>
   );
 };
