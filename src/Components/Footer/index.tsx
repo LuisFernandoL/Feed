@@ -1,7 +1,7 @@
 import { Container } from "./styled";
 
 interface FooterProps {
-  variant?: "absolute"| "static"
+  variant?: "fixed"| "static"
 } 
 
 export const Footer = ({variant}: FooterProps) => (
