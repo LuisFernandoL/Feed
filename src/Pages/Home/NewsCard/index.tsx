@@ -28,7 +28,7 @@ export const NewsCard = ({ post }: IPostCard) => {
           <TextTwo className="read-more">
             Leia mais
           </TextTwo> */}
-        <button onClick={()=>handleClick(post.id)}>Leia mais</button>
+        <button className="read-more" onClick={()=>handleClick(post.id)}>Leia mais</button>
         {/* </Link> */}
       </li>
     </Container>

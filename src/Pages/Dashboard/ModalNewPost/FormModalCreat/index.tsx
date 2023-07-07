@@ -7,11 +7,7 @@ import { StyleModalCreat } from "./StyleModalCreat";
 export const FormModalCreat = () => {
   const { editing, addNewPost } = useContext(PostContext);
   const { handleSubmit, register } = useForm<IPostNew>({
-    defaultValues: {
-      title: editing?.title,
-      image: editing?.image,
-      description: editing?.description,
-    },
+
   });
   const submit = (formData: IPostNew) => {
     addNewPost(formData);
