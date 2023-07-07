@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef } from "react";
-import { PostContext } from "../../../Components/Provider/PostContext";
+import { PostContext } from "../../../Provider/PostContext";
 import { ModalConteinerCreat } from "./StyleModalCreat";
 import { FormModalCreat } from "./FormModalCreat";
 import { AiOutlineClose } from "react-icons/ai"
@@ -8,6 +8,7 @@ export const ModalNewPost = () => {
   const { setCreatOpen } = useContext(PostContext);
   const buttonRef = useRef(null as any);
   const modalRef = useRef(null as any);
+  console.log(modalRef);
 
   useEffect(() => {
     const handleOutclick = (e: { target: any }) => {

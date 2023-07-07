@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
-import { IPostNew } from "../../../../Components/Provider/User/@types";
+import { IPostNew } from "../../../../Provider/User/@types";
 import { useContext } from "react";
-import { PostContext } from "../../../../Components/Provider/PostContext";
+import { PostContext } from "../../../../Provider/PostContext";
 import { StyleModalCreat } from "./StyleModalCreat";
 
 export const FormModalCreat = () => {

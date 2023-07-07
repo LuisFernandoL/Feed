@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { IPost } from "../Provider/User/@types";
-import { PostContext } from "../Provider/PostContext";
-import { Container } from "../../Styles/global";
-import { TitleThree } from "../../Styles/typography";
 import { TfiTrash } from "react-icons/tfi";
 import { MdOutlineEdit } from "react-icons/md";
 import { StyledDiv } from "./style";
+import { PostContext } from "../../../Provider/PostContext";
+import { IPost } from "../../../Provider/User/@types";
+import { Container } from "../../../Styles/global";
+import { TitleThree } from "../../../Styles/typography";
 interface DashboardNewCardProps {
   post: IPost;
 }

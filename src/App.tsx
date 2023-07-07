@@ -8,10 +8,9 @@ import { Header } from "./Components/Header";
 export const App = () => {
   return (
     <>
-      <GlobalStyle />
-      <Reset />
-      <Header />
-      <RoutesMain />
+			<GlobalStyle />
+			<Reset />
+      <RoutesMain /> 
       <ToastContainer />
     </>
   );

@@ -1,10 +1,10 @@
 import { createContext, useEffect, useState } from "react";
-import { api } from "../../../Services/api";
+import { api } from "../../Services/api";
 import { IUserContext, IUserProviderProps, IUser, IUserRegisterResponse, IUserLoginResponse } from "./@types";
-import { useNavigate } from "react-router-dom";
-import { TRegisterForm } from "../../../Pages/Register/registerFormSchema";
+import { useLocation, useNavigate } from "react-router-dom";
+import { TRegisterForm } from "../../Pages/Register/registerFormSchema";
 import { toast } from "react-toastify";
-import { TLoginForm } from "../../../Pages/Login/loginFormSchema";
+import { TLoginForm } from "../../Pages/Login/loginFormSchema";
 
 export const UserContext = createContext({} as IUserContext);
 
@@ -13,37 +13,42 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
   const navigate = useNavigate();
 
 
-//   useEffect(() => {
-//     const loadUser = async () => {
-//         const token = localStorage.getItem("@TOKEN")
-        
-//         if(token){
+  useEffect(() => {
+    const token = localStorage.getItem("@TOKEN")
+    const userId = localStorage.getItem("@USERID")
+    if(token){
+    const loadUser = async () => {
 
-//             try {
-//               const { data } = await api.post(`/users/${id}`, {
-//                     headers: {
-//                     Authorization: `Bearer ${token}`,
-//                     },
-//                 });
+            try {
+              const { data } = await api.get(`/users/${userId}`, {
+                    headers: {
+                    Authorization: `Bearer ${token}`,
+                    },
+                });
         
-//                 setUserLogged(data.user)
-     
-//             } catch (error) {
-//                 console.log(error)
+                setUserLogged(data.user)
+                console.log(data.user)
+                navigate("/home")
+            } catch (error) {
+                console.log(error)
                 
-//             }
-//         }
-//     }
-//     loadUser()
-// }, [])
+            }
+        }
+        loadUser()
+    }
+}, [])
 
+const access = () =>{
+userLogged ? navigate("/dashboard") : navigate("/")
 
+}
   const userRegister = async (formData: TRegisterForm) => {
     try {
       const { data } = await api.post<IUserRegisterResponse>(
         "/users",
         formData
       );
+      console.log(data);
       toast.success("Cadastro realizado com sucesso!");
       navigate("/");
     } catch (error) {
@@ -58,7 +63,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
       localStorage.setItem("@TOKEN", data.accessToken);
       localStorage.setItem("@USERID", JSON.stringify(data.user.id));
       toast.success("Login realizado com sucesso!");
-      navigate("/dashboard");
+      navigate("/home");
     } catch (error) {
       console.log(error);
       toast.error("Ops! Algo deu errado");
@@ -67,7 +72,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 
 
     const userLogout = () => {
-        setUserLogged(null);
+     
         localStorage.removeItem("@TOKEN");
         localStorage.removeItem("@USERID");
         setUserLogged(null)
@@ -76,7 +81,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 
   return (
     <UserContext.Provider
-      value={{ userLogged, userRegister, userLogin, userLogout }}
+      value={{ userLogged, userRegister, userLogin, userLogout, access }}
     >
       {children}
     </UserContext.Provider>

@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { PostContext } from "../../Components/Provider/PostContext";
+import { PostContext } from "../../Provider/PostContext";
 import { ModalNewPost } from "./ModalNewPost";
 import { StyledContainer } from "../../Styles/grid";
-import { DashboardNewCard } from "../../Components/DashboardNewCard";
+import { DashboardNewCard } from "./DashboardNewCard";
 import { Footer } from "../../Components/Footer";
 import { StyledSection } from "./StyleSection";
 import { AiOutlinePlusCircle } from "react-icons/ai";
