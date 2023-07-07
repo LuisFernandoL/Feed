@@ -40,8 +40,8 @@ export const ModalNewPost = () => {
       <div ref={modalRef}>
         <header>
           <h1>Novo post</h1>
-          <button ref={buttonRef} onClick={() => setCreatOpen(false)}>
-            <AiOutlineClose/>
+          <button className="closeBtn" ref={buttonRef} onClick={() => setCreatOpen(false)}>
+            <AiOutlineClose fill="black" size={25}/>
           </button>
         </header>
        <FormModalCreat/>

@@ -6,10 +6,12 @@ export const Container = styled.div`
     flex-direction: column;
     max-width: 54.7rem;
     min-width: clamp(150px, 100%, 580px);
+    align-items: flex-start;
 
     img {
       width: 100%;
       height: auto;
+      border-radius: 25px;
     }
 
     span {
@@ -27,8 +29,7 @@ export const Container = styled.div`
   }
 
   .read-more {
-
       color: var(--color-color-primary);
- 
+      padding-top: 2rem;
   }
 `;

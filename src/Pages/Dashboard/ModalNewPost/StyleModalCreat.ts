@@ -42,6 +42,12 @@ export const ModalConteinerCreat = styled.div`
         font-weight: 700;
       }
 
+      .closeBtn {
+        background: none;
+        width: 40px;
+        padding-bottom: 50px;
+      }
+
       button {
         color: var(--color-grey-2);
         font-size: 2.2rem;
