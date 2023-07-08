@@ -19,11 +19,17 @@ export const InternalContainer = styled.section`
   > div {
     margin-top: 4.5rem;
     
-    img {
+    .imgNews {
       width: 100%;
       max-width: 91.8rem;
       border-radius: 2.5rem;
       max-height: 45.5rem;
+    }
+
+    .imgLike {
+      width: 1.8rem;
+      height: 1.6rem;
+      cursor: pointer;
     }
 
     span {
