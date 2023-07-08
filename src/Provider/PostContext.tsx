@@ -104,22 +104,24 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
     }
   };
 
-  const postLikes = async () => {
+  const postLikes = async (postId: number) => {
     try {
-      const token = localStorage.getItem("@TOKEN");
+      const token = localStorage.getItem("@TOKEN"); 
+      const userId = localStorage.getItem("@USERID")
       const { data } = await api.post("/likes", {
+        userId, postId
+      },{
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log(data);
       setLikes(data);
-  
+      console.log(data);
     } catch (error) {
       toast.error("Ops! Algo deu errado.");
     }
   };
-  const postLikesDelete = async (id:number) => {
+  const postLikesDelete = async (postId:number) => {
     try {
       const token = localStorage.getItem("@TOKEN");
       const { data } = await api.delete(`/likes/${id}`, {
@@ -127,7 +129,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log(data);
       setLikes(data);
   
     } catch (error) {
