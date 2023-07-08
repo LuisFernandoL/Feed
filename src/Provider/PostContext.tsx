@@ -104,10 +104,10 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
     }
   };
 
-  const postLikes = async () => {
+  const postLikes = async (object: ILikes) => {
     try {
       const token = localStorage.getItem("@TOKEN");
-      const { data } = await api.post("/likes", {
+      const { data } = await api.post("/likes", object, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -121,6 +121,7 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
   };
   const postLikesDelete = async (id:number) => {
     try {
+      console.log(id)
       const token = localStorage.getItem("@TOKEN");
       const { data } = await api.delete(`/likes/${id}`, {
         headers: {

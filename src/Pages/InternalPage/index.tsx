@@ -6,13 +6,13 @@ import { TextTwo, TitleOne, TitleTwo } from "../../Styles/typography";
 import { FooterListContainer, InternalContainer } from "./style";
 import { Container } from "../../Styles/global";
 import { Footer } from "../../Components/Footer";
-import iconlike from "../../assets/iconlike.svg"
+import iconlike from "../../assets/iconlike.svg";
 
 export const InternalPage = () => {
-  const { posts, postInternal, postLikes } =
-    useContext(PostContext);
+  const { posts, postInternal, postLikes, postLikesDelete } = useContext(PostContext);
 
-  console.log(postInternal.likes.length)
+  const likesCount = postInternal.likes.length;
+  const userId = JSON.parse(localStorage.getItem("@USERID")!);
   return (
     <>
       <Header />
@@ -25,11 +25,34 @@ export const InternalPage = () => {
         </header>
 
         <div>
-          <img className="imgNews" src={postInternal.image} alt={postInternal.title} />
-          <img className="imgLike" src={iconlike} onClick={() => postLikes(postInternal.id)}/>
-          <span >
-            Seja primeiro a curtir este post
-          </span>
+          <img
+            className="imgNews"
+            src={postInternal.image}
+            alt={postInternal.title}
+          />
+          <aside>
+            <img
+              className="imgLike"
+              src={iconlike}
+              onClick={
+                
+                likesCount == 0 ?
+                () =>
+                postLikes({
+                  postId: postInternal.id,
+                  userId,
+                }) : () => postLikesDelete(postInternal.id)
+
+              }
+            />
+            <span>
+              {likesCount == 0
+                ? "Seja o primeiro a curtir este post"
+                : likesCount > 1
+                ? likesCount + " curtidas"
+                : likesCount + " curtida"}
+            </span>
+          </aside>
           <article>
             <p>{postInternal.description}</p>
           </article>

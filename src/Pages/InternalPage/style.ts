@@ -39,6 +39,13 @@ export const InternalContainer = styled.section`
       margin-bottom: 3.9rem;
     }
 
+    aside {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      line-height: 9.1rem;
+    }
+
     article {
       p {
         font-family: 'Inter', sans-serif;
