@@ -113,6 +113,7 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
         },
       });
       console.log(data);
+      setPostInternal({...postInternal})
       setLikes(data);
   
     } catch (error) {
@@ -132,7 +133,8 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
       setLikes(data);
   
     } catch (error) {
-      toast.error("Ops! Algo deu errado.");
+      console.log(error)
+      // toast.error("Ops! Algo deu errado.");
     }
   };
 
@@ -153,6 +155,7 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
         postLikes,
         postLikesDelete,
         postInternal,
+        setPostInternal,
         likes,
       }}
     >

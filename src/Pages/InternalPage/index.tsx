@@ -9,22 +9,32 @@ import { Footer } from "../../Components/Footer";
 import iconlike from "../../assets/iconlike.svg";
 
 export const InternalPage = () => {
-  const { posts, postInternal, postLikes, postLikesDelete, likes } =
-    useContext(PostContext);
-  const [isLike, setIsLike] = useState(false);
+  const { posts, postInternal, postLikes, postLikesDelete, setPostInternal } =
+  useContext(PostContext);
   const likesCount = postInternal?.likes?.length || 0;
-  const userId = JSON.parse(localStorage.getItem("@USERID")!);
-  console.log(likes)
+  const [isLike, setIsLike] = useState(false);
+  let [countLike, setCountLike] = useState(likesCount);
+
   const likeOrUnlike = () => {
+    const userId = JSON.parse(localStorage.getItem("@USERID")!);
     if (isLike) {
-      () => postLikesDelete(postInternal.id);
-      setIsLike(false)
+      postLikesDelete(postInternal.id);
+      if (countLike > 0) {
+        setCountLike((countLike) => {
+          return countLike - 1;
+        });
+      }
+      setIsLike(false);
+      console.log("decrement");
     } else {
+      console.log("increment");
+      setCountLike((countLike) => countLike + 1);
       postLikes({
         postId: postInternal.id,
         userId,
       });
-      setIsLike(true)
+      setPostInternal({ ...postInternal });
+      setIsLike(true);
     }
   };
 
@@ -48,11 +58,11 @@ export const InternalPage = () => {
           <aside>
             <img className="imgLike" src={iconlike} onClick={likeOrUnlike} />
             <span>
-              {likesCount == 0
+              {countLike == 0
                 ? "Seja o primeiro a curtir este post"
-                : likesCount > 1
-                ? likesCount + " curtidas"
-                : likesCount + " curtida"}
+                : countLike > 1
+                ? countLike + " curtidas"
+                : countLike + " curtida"}
             </span>
           </aside>
           <article>

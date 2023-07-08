@@ -1,3 +1,4 @@
+import { SetStateAction } from "react";
 import { TLoginForm } from "../../Pages/Login/loginFormSchema";
 import { TRegisterForm } from "../../Pages/Register/registerFormSchema";
 
@@ -60,4 +61,5 @@ export interface IPostContext {
   postLikesDelete: (id: number) => Promise<void>;
   postInternal: IPost;
   likes: ILikes[];
+  setPostInternal: React.Dispatch<SetStateAction<IPost>>
 }

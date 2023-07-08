@@ -23,7 +23,7 @@ export const Header = ({ pathname }: HeaderProps) => {
     return null
   }
 
-  console.log(userLogged);
+ 
   return (
     <StyledHeader>
       <Container>

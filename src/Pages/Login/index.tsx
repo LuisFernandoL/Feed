@@ -30,7 +30,7 @@ export const Login = () => {
 
   return (
     <>
-    <Header/>
+      <Header />
       <LoginStyle>
         <StyledContainer className="divInterna">
           <div className="div__img">
@@ -69,9 +69,9 @@ export const Login = () => {
               </Link>
             </div>
           </form>
-        <Footer variant="static" />
         </StyledContainer>
       </LoginStyle>
+      <Footer />
     </>
   );
 };

@@ -6,7 +6,7 @@ export const LoginStyle = styled.div`
   flex-wrap: wrap;
   width: 100vw;
   gap: 2rem;
-  height: calc(100vh - 8rem);
+  height: calc(100vh - 20rem);
 
   .divInterna {
     display: flex;
