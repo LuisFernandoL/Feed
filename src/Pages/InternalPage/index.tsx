@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { PostContext } from "../../Provider/PostContext";
 import { NewsCard } from "../Home/NewsCard";
 import { Header } from "../../Components/Header";
@@ -9,10 +9,25 @@ import { Footer } from "../../Components/Footer";
 import iconlike from "../../assets/iconlike.svg";
 
 export const InternalPage = () => {
-  const { posts, postInternal, postLikes, postLikesDelete } = useContext(PostContext);
-
-  const likesCount = postInternal.likes.length;
+  const { posts, postInternal, postLikes, postLikesDelete, likes } =
+    useContext(PostContext);
+  const [isLike, setIsLike] = useState(false);
+  const likesCount = postInternal?.likes?.length || 0;
   const userId = JSON.parse(localStorage.getItem("@USERID")!);
+  console.log(likes)
+  const likeOrUnlike = () => {
+    if (isLike) {
+      () => postLikesDelete(postInternal.id);
+      setIsLike(false)
+    } else {
+      postLikes({
+        postId: postInternal.id,
+        userId,
+      });
+      setIsLike(true)
+    }
+  };
+
   return (
     <>
       <Header />
@@ -31,20 +46,7 @@ export const InternalPage = () => {
             alt={postInternal.title}
           />
           <aside>
-            <img
-              className="imgLike"
-              src={iconlike}
-              onClick={
-                
-                likesCount == 0 ?
-                () =>
-                postLikes({
-                  postId: postInternal.id,
-                  userId,
-                }) : () => postLikesDelete(postInternal.id)
-
-              }
-            />
+            <img className="imgLike" src={iconlike} onClick={likeOrUnlike} />
             <span>
               {likesCount == 0
                 ? "Seja o primeiro a curtir este post"

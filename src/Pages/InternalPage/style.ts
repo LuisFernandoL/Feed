@@ -44,6 +44,10 @@ export const InternalContainer = styled.section`
       align-items: center;
       gap: 2rem;
       line-height: 9.1rem;
+
+      span {
+        all: unset
+      }
     }
 
     article {
