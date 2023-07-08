@@ -11,7 +11,7 @@ interface HeaderProps {
 }
 
 export const Header = ({ pathname }: HeaderProps) => {
-  const { access, userLogged } = useContext(UserContext);
+  const { access, userLogged, userLogout } = useContext(UserContext);
   const isDash: boolean = pathname === "/dashboard";
   // const token = localStorage.getItem("@TOKEN")
   console.log(userLogged);
@@ -31,8 +31,9 @@ export const Header = ({ pathname }: HeaderProps) => {
             width="112px"
           >
             {!isDash ? "Acessar" : "Dashboard"}
+            
           </Button>
-          {isDash && <FiLogOut size={24} />}
+          {isDash && <FiLogOut onClick={() => userLogout()} size={24} />}
         </span>
         {/* </Link>} */}
       </Container>

@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 export const PostContext = createContext({} as IPostContext);
 
 export const NewProvider = ({ children }: IUserProviderProps) => {
-  const [newPost, setNewPost] = useState<IPostNew | null>(null);
+  const [newPost] = useState<IPostNew | null>(null);
   const [posts, setPosts] = useState<IPost[]>([]);
   const [editing, setEditing] = useState<IPost>({} as IPost);
   const [creatOpen, setCreatOpen] = useState(false);
@@ -116,7 +116,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
         },
       });
       setLikes(data);
-      console.log(data);
     } catch (error) {
       toast.error("Ops! Algo deu errado.");
     }

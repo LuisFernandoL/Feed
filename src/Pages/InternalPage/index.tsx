@@ -9,7 +9,7 @@ import { Footer } from "../../Components/Footer";
 import iconlike from "../../assets/iconlike.svg"
 
 export const InternalPage = () => {
-  const { posts, postInternal, postLikes, postLikesDelete } =
+  const { posts, postInternal } =
     useContext(PostContext);
 
 

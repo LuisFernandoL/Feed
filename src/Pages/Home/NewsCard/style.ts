@@ -2,15 +2,18 @@ import { styled } from "styled-components";
 
 export const Container = styled.div`
 
+
   li {
     flex-direction: column;
     width: 54.6rem;
     max-width: clamp(15rem, 100%, 58rem);
 
+    
+
     img {
       border-radius: 2.5rem;
       max-height: 25.4rem;
-      max-width: clamp(15rem, 100%, 58rem);
+      max-width: clamp(150px, 100%, 580px);
     }
 
     span {

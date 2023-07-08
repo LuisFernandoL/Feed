@@ -23,6 +23,8 @@ export const StyledSection = styled.section`
     margin-top: 2.4rem; 
     display: flex;
     flex-direction: column;
+    height: calc(100vh - 32rem);
+    overflow-x: auto;
   }
 `;
 

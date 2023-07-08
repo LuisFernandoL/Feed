@@ -16,7 +16,7 @@ export const NewsCard = ({ post }: IPostCard) => {
     await internalPages(id);
   };
   return (
-    <Container>
+    <Container className="divLi">
       <li>
         <img src={post.image} alt={post.title} />
         <span>

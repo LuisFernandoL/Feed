@@ -3,9 +3,9 @@ import { PostContext } from "../../Provider/PostContext";
 import { Container } from "../../Styles/global";
 import { TitleTwo } from "../../Styles/typography";
 import { Header } from "../../Components/Header";
-import { AllPostsCards } from "./AllPostsCards";
 import { StyledUl, StyledDiv } from "./style";
 import { Footer } from "../../Components/Footer";
+import { NewsCard } from "../Home/NewsCard";
 
 
 export const AllPosts = () => {
@@ -18,10 +18,9 @@ export const AllPosts = () => {
         <StyledDiv>
           <TitleTwo>Todas as notícias</TitleTwo>
           <StyledUl>
-            {posts.map((post) => (
-              <AllPostsCards key={post.id} post={post} />
-            ))}
+            {posts.map((post) => <NewsCard key={post.id} post={post}/>)}
           </StyledUl>
+        
         </StyledDiv>
         <Footer variant="fixed"/>
       </Container>

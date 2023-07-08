@@ -12,10 +12,10 @@ export const Container = styled.div<ContainerProps>`
         bottom: 0;
         left: 0;
       `;
-    } else if(variant  === "static") {
+    } else if (variant === "static") {
       return css`
-        position: static
-      `
+        position: static;
+      `;
     }
   }};
 
@@ -28,6 +28,6 @@ export const Container = styled.div<ContainerProps>`
     justify-content: center;
     text-align: center;
     width: 100%;
-    height: 12rem;
+    height: 8rem;
   }
 `;

@@ -19,8 +19,8 @@ export const RoutesMain = () => {
       </Route>
 
       <Route path="/home" element={<Home />} />
-
       <Route path="/posts" element={<AllPosts />} />
+      
       <Route element={<ProtectedRoutes />}>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/eddidpost" element={<EdditPostPage />} />

@@ -7,6 +7,7 @@ export const StyledUl = styled.ul`
   justify-content: space-between;
   gap: 4rem;
   margin-top: 4rem;
+ 
 `
 
 export const StyledDiv = styled.div`
