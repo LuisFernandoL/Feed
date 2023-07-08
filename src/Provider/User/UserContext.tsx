@@ -27,10 +27,8 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
                 });
         
                 setUserLogged(data)
-                console.log(data)
                 navigate("/dashboard")
             } catch (error) {
-                console.log(error)
                 
             }
         }
@@ -48,11 +46,9 @@ userLogged ? navigate("/dashboard") : navigate("/")
         "/users",
         formData
       );
-      console.log(data);
       toast.success("Cadastro realizado com sucesso!");
       navigate("/");
     } catch (error) {
-      console.log(error);
       toast.error("Ops! Algo deu errado");
     }
   };
@@ -65,7 +61,6 @@ userLogged ? navigate("/dashboard") : navigate("/")
       toast.success("Login realizado com sucesso!");
       navigate("/home");
     } catch (error) {
-      console.log(error);
       toast.error("Ops! Algo deu errado");
     }
   };

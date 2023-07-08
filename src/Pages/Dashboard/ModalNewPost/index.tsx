@@ -9,7 +9,6 @@ export const ModalNewPost = () => {
   const { setCreatOpen } = useContext(PostContext);
   const buttonRef = useRef(null as any);
   const modalRef = useRef(null as any);
-  console.log(modalRef);
 
   useEffect(() => {
     const handleOutclick = (e: { target: any }) => {

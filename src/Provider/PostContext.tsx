@@ -30,7 +30,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
         const { data } = await api.get<IPost[]>("/posts?_embed=likes");
         setPosts(data);
       } catch (error) {
-        console.log(error);
       }
     };
     loadPost();
@@ -45,7 +44,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log(data);
       setPosts([...posts, data]);
       toast.success("Nova postagem feita com sucesso");
     } catch (error) {
@@ -65,7 +63,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
       setPosts([...newEddit, data]);
       navigate("/dashboard");
     } catch (error) {
-      console.log(error);
     }
   };
 
@@ -80,7 +77,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
       const newList = posts.filter((post) => post.id !== postId);
       setPosts(newList);
     } catch (error) {
-      console.log(error);
     }
   };
 
@@ -95,12 +91,10 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
     try {
  
       const { data } = await api.get<IPost>(`posts/${id}?_embed=likes`);
-      console.log(data);
 
       setPostInternal(data);
       navigate(`/posts/${id}`)
     } catch (error) {
-      console.log(error);
     }
   };
 
@@ -112,7 +106,6 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log(data);
       setPostInternal({...postInternal})
       setLikes(data);
   
@@ -122,18 +115,15 @@ export const NewProvider = ({ children }: IUserProviderProps) => {
   };
   const postLikesDelete = async (id:number) => {
     try {
-      console.log(id)
       const token = localStorage.getItem("@TOKEN");
       const { data } = await api.delete(`/likes/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log(data);
       setLikes(data);
   
     } catch (error) {
-      console.log(error)
       // toast.error("Ops! Algo deu errado.");
     }
   };
