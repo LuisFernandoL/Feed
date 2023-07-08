@@ -11,6 +11,7 @@ import { LoginStyle } from "./style";
 import { Footer } from "../../Components/Footer";
 import { TextTwo, TitleTwo } from "../../Styles/typography";
 import { Button } from "../../Styles/buttons";
+import { Header } from "../../Components/Header";
 
 export const Login = () => {
   const {
@@ -29,6 +30,7 @@ export const Login = () => {
 
   return (
     <>
+    <Header/>
       <LoginStyle>
         <StyledContainer className="divInterna">
           <div className="div__img">
@@ -67,8 +69,8 @@ export const Login = () => {
               </Link>
             </div>
           </form>
+        <Footer variant="static" />
         </StyledContainer>
-        <Footer />
       </LoginStyle>
     </>
   );

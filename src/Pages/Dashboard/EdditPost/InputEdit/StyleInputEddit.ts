@@ -1,13 +1,14 @@
 import { styled } from "styled-components";
 
 export const StyleInputEdit = styled.div`
-width: 100%;
+  width: 100%;
+
   input {
+    width: 100%;
     background-color: var(--color-grey-0);
-    height: 5rem;
+    border-radius: 0.5rem;
     font-size: 2.1rem;
     padding: 0 2rem;
-    border-radius: 0.5rem;
-    width: 100%;
+    margin-bottom: 1.5rem;
   }
 `;

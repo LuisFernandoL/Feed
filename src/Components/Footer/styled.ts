@@ -28,6 +28,6 @@ export const Container = styled.div<ContainerProps>`
     justify-content: center;
     text-align: center;
     width: 100%;
-    height: 8rem;
+    height: 12rem;
   }
 `;

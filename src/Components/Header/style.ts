@@ -25,5 +25,23 @@ export const StyledHeader = styled.header`
         align-items: center;
         gap: 1rem;
     }
+
+    .avatar {
+      background-color: var(--color-color-primary);
+      color: white;
+      height: 4.5rem;
+      width: 4.5rem;
+      margin-right: auto.5rem;
+      border-radius: 2.25rem;
+      
+      font-size: 16px;
+      font-weight: bold;
+      font-family: "Inter", sans-serif;
+      line-height: 4.5rem;
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 `

@@ -12,7 +12,7 @@ export const InternalPage = () => {
   const { posts, postInternal } =
     useContext(PostContext);
 
-  console.log(postInternal);
+  console.log(postInternal.likes.length)
   return (
     <>
       <Header />

@@ -16,39 +16,53 @@ export const ModalContainerCreate = styled.div`
   height: 100vh;
   background-color: rgba(85, 163, 255, 0.3);
   flex-direction: column;
+  z-index: 1;
+  
 
-  div {
+  > div {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
     background-color: #ffffff;
-    min-width: clamp(150px, 100%, 800px);
+    min-width: clamp(150px, 100%, 79.8rem);
     border-radius: 0.5rem;
-    padding: 2rem;
+    max-height: 66.1rem;
+    padding: 4rem;
+
+    button {
+      margin-top: 2rem;
+    }
+
+    .btn-close {
+      position: absolute;
+      padding: 1rem;
+      right: 1.5rem;
+      top: 0;
+    }
 
     header {
       position: relative;
       display: flex;
       flex-direction: row;
-      width: 100%;
       justify-content: space-between;
-      padding: 2rem 0;
+      
+      width: 100%;
+
       background-color: #ffffff;
-      font-size: 3.2rem;
-      border-radius: 0.5rem 0.5rem 0 0;
       color: #000000;
+ 
+      font-size: 3.2rem;
       font-weight: 700;
+
+      h2 {
+        margin: 0 0 2rem;
+      }
 
       h1 {
         font-weight: 700;
-      }
-
-      button {
-        position: absolute;
-        padding: 1.5rem;
-        right: 0;
-        top: 0;
       }
     }
   }

@@ -3,7 +3,6 @@ import { styled } from "styled-components";
 export const StyleModalCreate = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   width: 100%;
 
   input {

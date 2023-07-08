@@ -33,7 +33,7 @@ export const Dashboard = () => {
             </ul>
           </StyledSection>
       </DashboardContainer>
-      <Footer />
+      <Footer variant="fixed"/>
     </>
   );
 };

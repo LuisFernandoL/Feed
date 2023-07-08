@@ -13,10 +13,9 @@ export const StyleEdditPostMain = styled.main`
     justify-content: space-between;
     min-width: clamp(150px, 100%, 800px);
     padding: 2rem 0;
-      svg {
-        margin-right: 1rem;
-      }
-  
+    svg {
+      margin-right: 1rem;
+    }
   }
 
   .divMainEddit {
@@ -30,21 +29,22 @@ export const StyleEdditPostMain = styled.main`
       flex-direction: column;
       min-width: clamp(150px, 100%, 800px);
       gap: 2rem;
-      }
-      .divButtonEddit {
-        display: flex;
-        width: 100%;
-        button {
-          width: 16.6rem;
-          height: 6.4rem;
-          background-color: var(--color-color-primary);
-          border-radius: 0.5rem;
-          color: var(--color-grey-0);
-          font-size: 1.7rem;
-          font-weight: 700;
-        }
+    }
+    .divButtonEddit {
+      display: flex;
+      width: 100%;
+      
+      button {
+        width: 16.6rem;
+        height: 6.4rem;
+        background-color: var(--color-color-primary);
+        border-radius: 0.5rem;
+        color: var(--color-grey-0);
+        font-size: 1.7rem;
+        font-weight: 700;
       }
     }
+  }
 `;
 
 export const StyleLink = styled(Link)`

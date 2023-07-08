@@ -41,11 +41,11 @@ export const ModalNewPost = () => {
       <div ref={modalRef}>
         <header>
           <TitleTwo>Novo post</TitleTwo>
-          <button ref={buttonRef} onClick={() => setCreatOpen(false)}>
-            <AiOutlineClose size={21} color={"#0000007f"}/>
-          </button>
         </header>
         <FormModalCreat />
+        <button className="btn-close" ref={buttonRef} onClick={() => setCreatOpen(false)}>
+          <AiOutlineClose size={28} color={"#0000007f"}/>
+        </button>
       </div>
     </ModalContainerCreate>
   );
